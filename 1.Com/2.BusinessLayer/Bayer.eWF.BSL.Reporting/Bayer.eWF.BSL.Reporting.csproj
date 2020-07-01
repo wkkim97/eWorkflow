@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B145B47A-0AB3-4F5C-B22D-532EB81643C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bayer.eWF.BSL.Reporting</RootNamespace>
+    <AssemblyName>Bayer.eWF.BSL.Reporting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\9.Library\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\ReportingDao.cs" />
+    <Compile Include="Dto\DTO_REPORTING_PROGRAM.cs" />
+    <Compile Include="Dto\DTO_REPORTING_RETURN_GOODS_SAP_EXCEL.cs" />
+    <Compile Include="Dto\DTO_REPORTING_RETURN_GOODS.cs" />
+    <Compile Include="Dto\DTO_REPORTING_RETURN_GOODS_EXCEL.cs" />
+    <Compile Include="Dto\ReportingDto.cs" />
+    <Compile Include="Mgr\ReportingMgr.cs" />
+    <Compile Include="ReportingContext.cs" />
+    <Compile Include="ReturnGoodsContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eW.FrameWork\DNSoft.eW.FrameWork.csproj">
+      <Project>{84523bea-772b-4ee0-a238-e1dbf682ade4}</Project>
+      <Name>DNSoft.eW.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eWF.FrameWork.Data.EF\DNSoft.eWF.FrameWork.Data.EF.csproj">
+      <Project>{e56e6885-c79e-4fe3-8612-944336cbfbc6}</Project>
+      <Name>DNSoft.eWF.FrameWork.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eWF.FrameWork.Web\DNSoft.eWF.FrameWork.Web.csproj">
+      <Project>{1b0b5cda-a089-4b14-a04b-58dd78206c59}</Project>
+      <Name>DNSoft.eWF.FrameWork.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

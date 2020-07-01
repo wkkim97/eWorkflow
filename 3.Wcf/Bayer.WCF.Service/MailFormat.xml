@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mailinfo>
+  <Items>
+    <Item MailSendType="CurrentApprover">
+      <Button>Request|Approval|ForwardApproval</Button>
+      <To>Approver</To>
+      <Subject><![CDATA[[E-workflow] Arrival an approval document(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible.<br/>
+              <br/>
+              <a onClick="window.open({1})">{1}</a><br/>
+            </body>
+          </html>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="FinalApproval">
+      <Button>Approval</Button>
+      <To>Requester|Recipient|Reviewer</To>
+      <Subject><![CDATA[[E-workflow] Your document is Approved(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear “{0}”<br/>
+              <br/>
+              Your document was approved.<br/>
+              <br/>
+              <a onClick="window.open({1})">{1}</a><br/>
+            </body>
+          </html>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Reject">
+      <Button>Reject</Button>
+      <To>Requester</To>
+      <Subject><![CDATA[[E-workflow] Your document is rejected(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear “{0}”<br/>
+              <br/>
+              Your document was rejected.<br/>
+              Comment : “{1}”<br/>
+              <br/>
+              <a onClick="window.open({2})">{2}</a><br/>
+            </body>
+          </html>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Forward">
+      <Button>Forward</Button>
+      <To>Forwardedperson</To>
+      <Subject><![CDATA[]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear “{0}“<br/>
+              <br/>
+              Please find enclosed a link to an forwarded e-workflow document.<br/>
+              <br/>
+              <a onClick="window.open({1})">{1}</a><br/>
+            </body>
+          </html>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Withdraw">
+      <Button>Withdraw</Button>
+      <To>Requester|Approver|Recipient|Reviewer</To>
+      <Subject><![CDATA[[E-workflow] The document was withdrawn(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear Sir or Madam<br/>
+              <br/>
+              This document was withdrawn.<br/>
+              Comment : “{0}”<br/>
+              <br/>
+              <a onClick="window.open({1})">{1}</a><br/>
+              <br/>
+            </body>
+          </html>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Remind">
+      <Button>Remind</Button>
+      <To>CurrentApprover</To>
+      <Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html>
+            <head></head>
+            <body>
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible. <br/>
+              <br/>
+              <a onClick="window.open({1})">{1}</a><br/>
+              <br/>
+            </body>
+          </html>]]>
+      </Body>
+    </Item>
+  </Items>
+</Mailinfo>

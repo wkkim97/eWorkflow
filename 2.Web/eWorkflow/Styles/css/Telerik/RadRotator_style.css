@@ -1,0 +1,152 @@
+﻿.RadRotator_Bayer_Bayer {
+    visibility: hidden;
+}
+
+    .RadRotator_Bayer, .RadRotator_Bayer * {
+        box-sizing: content-box;
+        -moz-box-sizing: content-box;
+    }
+
+        .RadRotator_Bayer .rrRelativeWrapper {
+            overflow: hidden;
+            position: relative;
+            margin: 0 !important;
+        }
+
+        .RadRotator_Bayer .rrClipRegion {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            border: 0px solid;
+        }
+
+            .RadRotator_Bayer .rrClipRegion .rrItemsList {
+                float: left;
+                padding: 0;
+                margin: 0;
+                list-style: none !important;
+            }
+
+                .RadRotator_Bayer .rrClipRegion .rrItemsList .rrItem {
+                    float: left;
+                }
+
+        .RadRotator_Bayer.rrTouchEnabled .rrClipRegion {
+            overflow: scroll !important;
+            -webkit-overflow-scrolling: touch;
+        }
+
+            .RadRotator_Bayer.rrTouchEnabled .rrClipRegion .rrItem {
+                overflow: hidden;
+            }
+
+        .RadRotator_Bayer ul.rrVerticalList {
+            padding: 0;
+            margin: 0;
+            list-style: none !important;
+        }
+
+        .RadRotator_Bayer .rrVerticalList.rrItemsList li.rrItem {
+            float: none;
+            margin-bottom: 0;
+            overflow: hidden;
+            display: block;
+            _float: left !important;
+        }
+
+        .RadRotator_Bayer .rrButton {
+            font-size: 1px;
+            text-indent: -9999px;
+            display: block;
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            line-height: 20px;
+            display: none;
+            outline: 0;
+        }
+
+            .RadRotator_Bayer .rrButton:hover {
+                filter: alpha(opacity=100);
+                opacity: 1;
+                -moz-opacity: 1;
+                -ms-filter: "alpha(opacity=100)";
+            }
+
+            .RadRotator_Bayer .rrButton.rrButtonUp {
+                background-position: 0 0;
+                top: 0;
+                left: 50%;
+                margin-left: -10px;
+            }
+
+                .RadRotator_Bayer .rrButton.rrButtonUp:hover {
+                    background-position: -20px 0;
+                }
+
+            .RadRotator_Bayer .rrButton.rrButtonRight {
+                position: absolute;
+                top: 260px;
+                left: 660px;width:20px; height:31px;
+                background-image: url("/eWorks/Styles/images/main_next.png");
+            }
+
+                .RadRotator_Bayer .rrButton.rrButtonRight:hover {
+                    position: absolute;
+                    top: 260px;
+                    left: 660px;width:20px; height:31px;
+                    background-image: url("/eWorks/Styles/images/main_next.png");
+                }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .RadRotator_Bayer .rrButton .rrButtonRight {
+        margin-right: -17px;
+    }
+}
+
+.RadRotator_Bayer .rrButton.rrButtonDown {
+    background-position: 0 -40px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: 1px;
+    _margin-top: -1px;
+}
+
+    .RadRotator_Bayer .rrButton.rrButtonDown:hover {
+        background-position: -20px -40px;
+    }
+
+.RadRotator_Bayer .rrButton.rrButtonLeft {
+
+       position:absolute; top:260px; left:0px; width:20px; height:31px;
+       background-image:url("/eWorks/Styles/images/main_prev.png");
+}
+
+    .RadRotator_Bayer .rrButton.rrButtonLeft:hover {
+        position: absolute;
+        top: 260px;
+        left: 0px;
+        width: 20px;
+        height: 31px;
+        background-image: url("/eWorks/Styles/images/main_prev.png");
+    }
+  
+
+.RadRotator_Bayer .rrButton.rrButtonDisabled {
+    opacity: .2;
+    filter: alpha(opacity=20);
+    -ms-filter: "alpha(opacity=20)";
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .RadRotator_Bayer .rrRelativeWrapper::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.RadRotator_Bayer.rrNoBorder .rrClipRegion {
+    border-width: 0 !important;
+}

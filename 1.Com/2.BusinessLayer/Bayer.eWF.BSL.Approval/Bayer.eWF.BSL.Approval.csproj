@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2475400F-3DA6-4D93-802F-E14EF3376DA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Bayer.eWF.BSL.Approval</RootNamespace>
+    <AssemblyName>Bayer.eWF.BSL.Approval</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\9.Library\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AfterTreatmentContext.cs" />
+    <Compile Include="ApprovalContext.cs" />
+    <Compile Include="Dao\AbsenceDao.cs" />
+    <Compile Include="Dao\AfterTreatmentDao.cs" />
+    <Compile Include="Dao\BKLSpecialPriceandDiscountDao.cs" />
+    <Compile Include="Dao\InternalEventDao.cs" />
+    <Compile Include="Dao\BaseDiscountPriceDao.cs" />
+    <Compile Include="Dao\BasePriceDao.cs" />
+    <Compile Include="Dao\BKLPriceAndMarginDao.cs" />
+    <Compile Include="Dao\CustomerComplaintHandling.cs" />
+    <Compile Include="Dao\CSSalesRecognitionDao.cs" />
+    <Compile Include="Dao\PHExceptionrequestDao.cs" />
+    <Compile Include="Dao\CSSubsidycaseDao.cs" />
+    <Compile Include="Dao\CSExceptionrequestDao.cs" />
+    <Compile Include="Dao\BCSCompensationDao.cs" />
+    <Compile Include="Dao\BCSARAdjustmentDao.cs" />
+    <Compile Include="Dao\BCSProcessChangeDao.cs" />
+    <Compile Include="Dao\BCSReturnGoodsDao.cs" />
+    <Compile Include="Dao\BHCPriceAndMarginDao.cs" />
+    <Compile Include="Dao\BHCReturnGoodsDao.cs" />
+    <Compile Include="Dao\BmskPriceDao.cs" />
+    <Compile Include="Dao\BmskRebateDao.cs" />
+    <Compile Include="Dao\BusinessCardDao.cs" />
+    <Compile Include="Dao\CsFmToNhSaleDao.cs" />
+    <Compile Include="Dao\CancelationMortgageDao.cs" />
+    <Compile Include="Dao\ClaimSettlementDao.cs" />
+    <Compile Include="Dao\CommonDao.cs" />
+    <Compile Include="Dao\CompetitorContractDao.cs" />
+    <Compile Include="Dao\ComplianceReviewForPromotionalMaterialDao.cs" />
+    <Compile Include="Dao\ContractManagementDao.cs" />
+    <Compile Include="Dao\CorporateCardDao.cs" />
+    <Compile Include="Dao\CreditDebitMemoDao.cs" />
+    <Compile Include="Dao\CreditDebitNoteDao.cs" />
+    <Compile Include="Dao\CsCreditLimitApprovalDao.cs" />
+    <Compile Include="Dao\CreditLimitSettingDao.cs" />
+    <Compile Include="Dao\CreditReleaseDao.cs" />
+    <Compile Include="Dao\DonationDao.cs" />
+    <Compile Include="Dao\EarlyPaymentDiscountDao.cs" />
+    <Compile Include="Dao\FreeGoodsDao.cs" />
+    <Compile Include="Dao\IncentivePaymentDao.cs" />
+    <Compile Include="Dao\IncentiveSchemeDao.cs" />
+    <Compile Include="Dao\IncidentReportDao.cs" />
+    <Compile Include="Dao\InteractionHealthcareProDao.cs" />
+    <Compile Include="Dao\ITResourceDao.cs" />
+    <Compile Include="Dao\ListPriceDao.cs" />
+    <Compile Include="Dao\MarketPositionReviewDao.cs" />
+    <Compile Include="Dao\MaterialPriceDao.cs" />
+    <Compile Include="Dao\MembershipApplicationDao.cs" />
+    <Compile Include="Dao\MortgageManagementDao.cs" />
+    <Compile Include="Dao\AHPIActivityDao.cs" />
+    <Compile Include="Dao\PIActivityDao.cs" />
+    <Compile Include="Dao\BvsSeedImportDao.cs" />
+    <Compile Include="Dao\RebatePolicyDao.cs" />
+    <Compile Include="Dao\RxVolumeDataCollection.cs" />
+    <Compile Include="Dao\ResaleDataCollection.cs" />
+    <Compile Include="Dao\SampleRequestDao.cs" />
+    <Compile Include="Dao\SecondarySealDao.cs" />
+    <Compile Include="Dao\SpecialPricingDao.cs" />
+    <Compile Include="Dao\StrategicChangeReportDao.cs" />
+    <Compile Include="Dao\TravelManagementDao.cs" />
+    <Compile Include="Dao\WholesalerMarginAgreementDao.cs" />
+    <Compile Include="Dto\CreditDebitNoteViewDto.cs" />
+    <Compile Include="Dto\DTO_ABSENCE.cs" />
+    <Compile Include="Dto\DTO_APPROVAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_HOSPITAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT.cs" />
+    <Compile Include="Dto\DTO_DOC_INTERNAL_EVENT.cs" />
+    <Compile Include="Dto\DTO_DOC_INTERNAL_EVENT_COST_DETAIL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PRICE_AND_MARGIN.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PRICE_AND_MARGIN_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PRICE_AND_MARGIN_HOSPITAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PRICE_AND_MARGIN_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CUSTOMER_COMPLAINT_HANDLING_GRID.cs" />
+    <Compile Include="Dto\DTO_DOC_CUSTOMER_COMPLAINT_HANDLING_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_SALES_RECOGNITION.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_SALES_RECOGNITION_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_RETURN_GOODS.cs" />
+    <Compile Include="Dto\DTO_DOC_PH_EXCEPTION_REQUEST.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_SUBSIDY_CASE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_SUBSIDY_CASE.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_EXCEPTION_REQUEST.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_EXCEPTION_REQUEST_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_COMPENSATION_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_COMPENSATION.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_PROCESS_CHANGE.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPLIANCE_BHC_PROMOTIONAL_MATERIAL.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPLIANCE_REVIEW_FOR_PROMOTIONAL_MATERIAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BASE_DISCOUNT_PRICE_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_AR_ADJUSTMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_AR_ADJUSTMENT_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_AR_ADJUSTMENT_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CUSTOMER_COMPLAINT_HANDLING.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_RETURN_GOODS_GRID.cs" />
+    <Compile Include="Dto\DTO_DOC_BCS_RETURN_GOODS_LIST.cs" />
+    <Compile Include="Dto\DTO_DOC_BHC_RETURN_GOODS.cs" />
+    <Compile Include="Dto\DTO_DOC_BMSK_REBATE.cs" />
+    <Compile Include="Dto\DTO_DOC_BMSK_REBATE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BASE_DISCOUNT_PRICE.cs" />
+    <Compile Include="Dto\DTO_DOC_BASE_DISCOUNT_PRICE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BMSK_PRICE.cs" />
+    <Compile Include="Dto\DTO_DOC_BMSK_PRICE_LIST.cs" />
+    <Compile Include="Dto\DTO_DOC_BMSK_REBATE_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_CANCELATION_MORTGAGE.cs" />
+    <Compile Include="Dto\DTO_DOC_CLAIM_SETTLEMENT_LIST.cs" />
+    <Compile Include="Dto\DTO_DOC_BASE_PRICE.cs" />
+    <Compile Include="Dto\DTO_DOC_BASE_PRICE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BUSINESS_CARD.cs" />
+    <Compile Include="Dto\DTO_DOC_CLAIM_SETTLEMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPETITOR_CONTRACT.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPETITOR_CONTRACT_PARTICIPANT.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPLIANCE_REVIEW_FOR_PROMOTIONAL_MATERIAL_COUNTRY.cs" />
+    <Compile Include="Dto\DTO_DOC_COMPLIANCE_REVIEW_FOR_PROMOTIONAL_MATERIAL_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CONTRACT_MANAGEMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_CORPORATE_CARD.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_MEMO.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_MEMO_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_MEMO_WHOLESALER.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_NOTE.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_NOTE_ATTN.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_NOTE_CC.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_DEBIT_NOTE_DESC.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_CREDIT_LIMIT_APPROVAL.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_LIMIT_SETTING.cs" />
+    <Compile Include="Dto\DTO_DOC_CREDIT_RELEASE.cs" />
+    <Compile Include="Dto\DTO_DOC_DONATION.cs" />
+    <Compile Include="Dto\DTO_DOC_DONATION_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_EARLY_PAYMENT_DISCOUNT.cs" />
+    <Compile Include="Dto\DTO_DOC_FREE_GOODS.cs" />
+    <Compile Include="Dto\DTO_DOC_FREE_GOODS_CHECK_DUPLICATE.cs" />
+    <Compile Include="Dto\DTO_DOC_FREE_GOODS_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_FREE_GOODS_INFO.cs" />
+    <Compile Include="Dto\DTO_DOC_INCENTIVE_PAYMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_INCENTIVE_SCHEME.cs" />
+    <Compile Include="Dto\DTO_DOC_INCIDENT_REPORT.cs" />
+    <Compile Include="Dto\DTO_DOC_INTERACTION_HEALTHCARE_PRO.cs" />
+    <Compile Include="Dto\DTO_DOC_INTERACTION_HEALTHCARE_PRO_COUNTRY.cs" />
+    <Compile Include="Dto\DTO_DOC_INTERACTION_HEALTHCARE_PRO_DETAIL.cs" />
+    <Compile Include="Dto\DTO_DOC_IT_RESOURCE.cs" />
+    <Compile Include="Dto\DTO_DOC_LIST_PRICE.cs" />
+    <Compile Include="Dto\DTO_DOC_LIST_PRICE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_MARKET_POSITION_REVIEW.cs" />
+    <Compile Include="Dto\DTO_DOC_MATERIAL_PRICE.cs" />
+    <Compile Include="Dto\DTO_DOC_MATERIAL_PRICE_LIST.cs" />
+    <Compile Include="Dto\DTO_DOC_MATERIAL_PRICE_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_MEMBERSHIP_APPLICATION.cs" />
+    <Compile Include="Dto\DTO_DOC_MORTGAGE_MANAGMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_BHC_PRICE_AND_MARGIN.cs" />
+    <Compile Include="Dto\DTO_DOC_BHC_PRICE_AND_MARGIN_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_BHC_PRICE_AND_MARGIN_HOSPITAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BHC_PRICE_AND_MARGIN_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_AH_P_I_ACTIVITY.cs" />
+    <Compile Include="Dto\DTO_DOC_P_I_ACTIVITY.cs" />
+    <Compile Include="Dto\DTO_DOC_AH_P_I_ACTIVITY_COST_DETAIL.cs" />
+    <Compile Include="Dto\DTO_DOC_P_I_ACTIVITY_COST_DETAIL.cs" />
+    <Compile Include="Dto\DTO_DOC_BVS_SEED_IMPORT.cs" />
+    <Compile Include="Dto\DTO_DOC_REBATE_POLICY.cs" />
+    <Compile Include="Dto\DTO_DOC_REBATE_POLICY_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_BVS_SEED_IMPORT_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_REBATE_POLICY_PRODUCT_LIST.cs" />
+    <Compile Include="Dto\DTO_DOC_RX_VOLUME_DATA_COLLECTION.cs" />
+    <Compile Include="Dto\DTO_DOC_RESALE_DATA_COLLECTION.cs" />
+    <Compile Include="Dto\DTO_DOC_SAMPLE_REQUEST.cs" />
+    <Compile Include="Dto\DTO_DOC_SAMPLE_REQUEST_ITEMS.cs" />
+    <Compile Include="Dto\DTO_DOC_SECONDARY_SEAL.cs" />
+    <Compile Include="Dto\DTO_DOC_SPECIAL_PRICING.cs" />
+    <Compile Include="Dto\DTO_DOC_SPECIAL_PRICING_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_DOC_STRATEGIC_CHANGE_REPORT.cs" />
+    <Compile Include="Dto\DTO_DOC_TRAVEL_MANAGEMENT_ACCOMMODATION.cs" />
+    <Compile Include="Dto\DTO_DOC_TRAVEL_MANAGEMENT_CALENDAR.cs" />
+    <Compile Include="Dto\DTO_DOC_TRAVEL_MANAGEMENT_ROUTE.cs" />
+    <Compile Include="Dto\DTO_DOC_TRAVEL_MANAGEMENT_TRAVELER.cs" />
+    <Compile Include="Dto\DTO_DOC_WHOLESALER_MARGIN_AGREEMENT.cs" />
+    <Compile Include="Dto\DTO_DOC_WHOLESALER_MARGIN_AGREEMENT_CUSTOMER.cs" />
+    <Compile Include="Dto\DTO_DOC_WHOLESALER_MARGIN_AGREEMENT_HOSPITAL.cs" />
+    <Compile Include="Dto\DTO_DOC_WHOLESALER_MARGIN_AGREEMENT_PRODUCT.cs" />
+    <Compile Include="Dto\DTO_PROCESS_APPROVER_ADDTIONAL.cs" />
+    <Compile Include="Dto\DTO_DOC_TRAVEL_MANAGEMENT.cs" />
+    <Compile Include="Dto\RejectDocumentMailCommentDto.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_FM_TO_NH_SALE.cs" />
+    <Compile Include="Dto\DTO_DOC_CS_FM_TO_NH_SALE_PRODUCT.cs" />
+    <Compile Include="Mgr\AbsenceMgr.cs" />
+    <Compile Include="Mgr\AfterTreatmentMgr.cs" />
+    <Compile Include="Mgr\BKLSpecialPriceandDiscountMgr.cs" />
+    <Compile Include="Mgr\InternalEventMgr.cs" />
+    <Compile Include="Mgr\BaseDiscountPriceMgr.cs" />
+    <Compile Include="Mgr\BasePriceMgr.cs" />
+    <Compile Include="Mgr\BKLPriceAndMarginMgr.cs" />
+    <Compile Include="Mgr\CustomerComplaintHandling.cs" />
+    <Compile Include="Mgr\CSSalesRecognitionMgr.cs" />
+    <Compile Include="Mgr\PHExceptionrequestMgr.cs" />
+    <Compile Include="Mgr\CSSubsidycaseMgr.cs" />
+    <Compile Include="Mgr\CSExceptionrequestMgr.cs" />
+    <Compile Include="Mgr\BCSCompensationMgr.cs" />
+    <Compile Include="Mgr\BCSARAdjustmentMgr.cs" />
+    <Compile Include="Mgr\BCSProcessChangeMgr.cs" />
+    <Compile Include="Mgr\BCSReturnGoodsMgr.cs" />
+    <Compile Include="Mgr\BHCPriceAndMarginMgr.cs" />
+    <Compile Include="Mgr\BhcReturnGoodsMgr.cs" />
+    <Compile Include="Mgr\BmskPriceMgr.cs" />
+    <Compile Include="Mgr\BmskRebateMgr.cs" />
+    <Compile Include="Mgr\BusinessCardMgr.cs" />
+    <Compile Include="Mgr\CsFmToNhSaleMgr.cs" />
+    <Compile Include="Mgr\CancelationMortgageMgr.cs" />
+    <Compile Include="Mgr\ClaimSettlementMgr.cs" />
+    <Compile Include="Mgr\CommonMgr.cs" />
+    <Compile Include="Mgr\CompetitorContractMgr.cs" />
+    <Compile Include="Mgr\ComplianceReviewForPromotionalMaterialMgr.cs" />
+    <Compile Include="Mgr\ContractManagementMgr.cs" />
+    <Compile Include="Mgr\CorporateCardMgr.cs" />
+    <Compile Include="Mgr\CreditDebitMemoMgr.cs" />
+    <Compile Include="Mgr\CreditDebitNoteMgr.cs" />
+    <Compile Include="Mgr\CsCreditLimitApprovalMgr.cs" />
+    <Compile Include="Mgr\CreditLimitSettingMgr.cs" />
+    <Compile Include="Mgr\CreditReleaseMgr.cs" />
+    <Compile Include="Mgr\DonationMgr.cs" />
+    <Compile Include="Mgr\EarlyPaymentDiscountMgr.cs" />
+    <Compile Include="Mgr\FreeGoodsMgr.cs" />
+    <Compile Include="Mgr\IncentivePaymentMgr.cs" />
+    <Compile Include="Mgr\IncentiveSchemeMgr.cs" />
+    <Compile Include="Mgr\IncidentReportMgr.cs" />
+    <Compile Include="Mgr\InteractionHealthcareProMgr.cs" />
+    <Compile Include="Mgr\ITResourceMgr.cs" />
+    <Compile Include="Mgr\ListPriceMgr.cs" />
+    <Compile Include="Mgr\MarketPositionReviewMgr.cs" />
+    <Compile Include="Mgr\MaterialPriceMgr.cs" />
+    <Compile Include="Mgr\MembershipApplicationMgr.cs" />
+    <Compile Include="Mgr\MortgageManagementMgr.cs" />
+    <Compile Include="Mgr\AHPIActivityMgr.cs" />
+    <Compile Include="Mgr\PIActivityMgr.cs" />
+    <Compile Include="Mgr\BvsSeedImportMgr.cs" />
+    <Compile Include="Mgr\RebatePolicyMgr.cs" />
+    <Compile Include="Mgr\RxVolumeDataCollectionMgr.cs" />
+    <Compile Include="Mgr\ResaleDataCollectionMgr.cs" />
+    <Compile Include="Mgr\SampleRequestMgr.cs" />
+    <Compile Include="Mgr\SecondarySealMgr.cs" />
+    <Compile Include="Mgr\SpecialPricingMgr.cs" />
+    <Compile Include="Mgr\StrategicChangeReportMgr.cs" />
+    <Compile Include="Mgr\TravelManagementMgr.cs" />
+    <Compile Include="Mgr\WholesalerMarginAgreementMgr.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\SendToAgencyBusicessCardDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eW.FrameWork\DNSoft.eW.FrameWork.csproj">
+      <Project>{84523bea-772b-4ee0-a238-e1dbf682ade4}</Project>
+      <Name>DNSoft.eW.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eWF.FrameWork.Data.EF\DNSoft.eWF.FrameWork.Data.EF.csproj">
+      <Project>{e56e6885-c79e-4fe3-8612-944336cbfbc6}</Project>
+      <Name>DNSoft.eWF.FrameWork.Data.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\1.Framework\DNSoft.eWF.FrameWork.Web\DNSoft.eWF.FrameWork.Web.csproj">
+      <Project>{1b0b5cda-a089-4b14-a04b-58dd78206c59}</Project>
+      <Name>DNSoft.eWF.FrameWork.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bayer.eWF.BSL.Common\Bayer.eWF.BSL.Common.csproj">
+      <Project>{0466a146-3b54-46fe-bc6a-6711f7781d81}</Project>
+      <Name>Bayer.eWF.BSL.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
