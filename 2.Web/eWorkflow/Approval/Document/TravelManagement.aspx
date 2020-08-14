@@ -42,7 +42,7 @@ function fn_UpdateGridDataFromUploader() {
 
 function fn_DoRequest(sender, arsg) {
     var requestAgency = $('#<%= hddIsAfterSendMail.ClientID%>').val();
-    if (requestAgency == 'Y')
+    if (requestAgency != 'Y')
         return fn_UpdateGridData(null, false, false, false);
     else {
         fn_OpenDocInformation('Agency에 메일 발송 바랍니다.')

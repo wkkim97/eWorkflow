@@ -158,6 +158,11 @@ public partial class Approval_Document_SecondarySeal : DNSoft.eWF.FrameWork.Web.
                     radBCS.Checked = true;
                     //this.radDropSeal.SelectedValue = doc.SEAL_HOLDER_CODE;
                 }
+                else if (radMKR.Value == doc.SEAL_COMPANY)
+                {
+                    radMKR.Checked = true;
+                    //this.radDropSeal.SelectedValue = doc.SEAL_HOLDER_CODE;
+                }
 
                 if (RadElectronic.Value == doc.SIGN_TYPE)
                 {
@@ -190,8 +195,8 @@ public partial class Approval_Document_SecondarySeal : DNSoft.eWF.FrameWork.Web.
         doc.PROCESS_STATUS = ApprovalStatus; //
         doc.REQUEST_DATE = DateTime.Now;
         doc.REQUESTER_ID = this.Sessions.UserID.ToString();
-        if (radBtnSecondary.Checked == true)  doc.SUBJECT = GetSealTypeData(DataKind.Value)+ "/" + this.radDropSeal.SelectedText + "/" + this.RadtxtRecipient.Text;  // Secondary Seal 을 선책했을 경우
-        else if (radBtnCorporate.Checked == true) doc.SUBJECT = GetSealTypeData(DataKind.Value) + "/" + this.RadtxtRecipient.Text;  // Corporate Seal 을 선택했을 경우
+        if (radBtnSecondary.Checked == true)  doc.SUBJECT = GetSealTypeData(DataKind.Value)+ "/" + this.radDropSeal.SelectedText + "/" + GetSignTypeData(DataKind.Value) + "/" + this.RadtxtRecipient.Text;  // Secondary Seal 을 선책했을 경우
+        else if (radBtnCorporate.Checked == true) doc.SUBJECT = GetSealTypeData(DataKind.Value) + "/" + this.RadtxtRecipient.Text  + "/" + GetSignTypeData(DataKind.Value);   // Corporate Seal 을 선택했을 경우
 
         webMaster.Subject = doc.SUBJECT;
         doc.COMPANY_CODE = this.Sessions.CompanyCode.ToString();
@@ -221,7 +226,13 @@ public partial class Approval_Document_SecondarySeal : DNSoft.eWF.FrameWork.Web.
             doc.SEAL_COMPANY = this.radBCS.Value;
             //doc.SEAL_HOLDER_CODE = null;
         }
-        if(this.RadElectronic.Checked)
+        else if (this.radMKR.Checked)
+        {
+            doc.SEAL_COMPANY = this.radMKR.Value;
+            //doc.SEAL_HOLDER_CODE = null;
+        }
+
+        if (this.RadElectronic.Checked)
             doc.SIGN_TYPE = this.RadElectronic.Value;
 
         if (this.RadPaper.Checked)
@@ -328,8 +339,9 @@ public partial class Approval_Document_SecondarySeal : DNSoft.eWF.FrameWork.Web.
     {
         var COMPANY = "BCS";
         if (radBKL.Checked) COMPANY = "BKL";
+        if (radMKR.Checked) COMPANY = "MKR";
 
-        for(int i=0;i< radDropSeal.Items.Count; i++)
+        for (int i=0;i< radDropSeal.Items.Count; i++)
         {
             if (radDropSeal.Items[i].Text.IndexOf(COMPANY) >=0)
             {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.705
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Config", "0.Config", "{DC72EFEC-4E04-4728-9F9F-67F4445A8F14}"
 	ProjectSection(SolutionItems) = preProject
@@ -178,69 +178,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {991E904E-1AED-4C66-8E49-F0D468D8B1C2}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 15
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://10.43.48.17:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = 1.Com\\1.Framework\\DNSoft.eW.FrameWork.Common\\DNSoft.eW.FrameWork.Common.csproj
-		SccProjectTopLevelParentUniqueName1 = eWorkflow.sln
-		SccProjectName1 = 1.Com/1.Framework/DNSoft.eW.FrameWork.Common
-		SccLocalPath1 = 1.Com\\1.Framework\\DNSoft.eW.FrameWork.Common
-		SccProjectUniqueName2 = 1.Com\\1.Framework\\DNSoft.eW.FrameWork\\DNSoft.eW.FrameWork.csproj
-		SccProjectTopLevelParentUniqueName2 = eWorkflow.sln
-		SccProjectName2 = 1.Com/1.Framework/DNSoft.eW.FrameWork
-		SccLocalPath2 = 1.Com\\1.Framework\\DNSoft.eW.FrameWork
-		SccProjectUniqueName3 = 1.Com\\1.Framework\\DNSoft.eWF.FrameWork.Data.EF\\DNSoft.eWF.FrameWork.Data.EF.csproj
-		SccProjectTopLevelParentUniqueName3 = eWorkflow.sln
-		SccProjectName3 = 1.Com/1.Framework/DNSoft.eWF.FrameWork.Data.EF
-		SccLocalPath3 = 1.Com\\1.Framework\\DNSoft.eWF.FrameWork.Data.EF
-		SccProjectUniqueName4 = 1.Com\\1.Framework\\DNSoft.eWF.FrameWork.Web\\DNSoft.eWF.FrameWork.Web.csproj
-		SccProjectTopLevelParentUniqueName4 = eWorkflow.sln
-		SccProjectName4 = 1.Com/1.Framework/DNSoft.eWF.FrameWork.Web
-		SccLocalPath4 = 1.Com\\1.Framework\\DNSoft.eWF.FrameWork.Web
-		SccProjectUniqueName5 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Approval\\Bayer.eWF.BSL.Approval.csproj
-		SccProjectTopLevelParentUniqueName5 = eWorkflow.sln
-		SccProjectName5 = 1.Com/2.BusinessLayer/Bayer.eWF.BSL.Approval
-		SccLocalPath5 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Approval
-		SccProjectUniqueName6 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Common\\Bayer.eWF.BSL.Common.csproj
-		SccProjectTopLevelParentUniqueName6 = eWorkflow.sln
-		SccProjectName6 = 1.Com/2.BusinessLayer/Bayer.eWF.BSL.Common
-		SccLocalPath6 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Common
-		SccProjectUniqueName7 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Configuration\\Bayer.eWF.BSL.Configuration.csproj
-		SccProjectTopLevelParentUniqueName7 = eWorkflow.sln
-		SccProjectName7 = 1.Com/2.BusinessLayer/Bayer.eWF.BSL.Configuration
-		SccLocalPath7 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Configuration
-		SccProjectUniqueName8 = 2.Web\\WebBase\\WebBase\\DNSoft.eWF.FrameWork.Web.WebBase.csproj
-		SccProjectTopLevelParentUniqueName8 = eWorkflow.sln
-		SccProjectName8 = 2.Web/WebBase/WebBase
-		SccLocalPath8 = 2.Web\\WebBase\\WebBase
-		SccProjectUniqueName9 = 3.Wcf\\Bayer.WCF.Service\\Bayer.WCF.Service.csproj
-		SccProjectTopLevelParentUniqueName9 = eWorkflow.sln
-		SccProjectName9 = 3.Wcf/Bayer.WCF.Service
-		SccLocalPath9 = 3.Wcf\\Bayer.WCF.Service
-		SccProjectUniqueName10 = 3.Wcf\\Bayer.WCF.Site\\Bayer.Wcf.Site\\Bayer.Wcf.Site.csproj
-		SccProjectTopLevelParentUniqueName10 = eWorkflow.sln
-		SccProjectName10 = 3.Wcf/Bayer.WCF.Site/Bayer.Wcf.Site
-		SccLocalPath10 = 3.Wcf\\Bayer.WCF.Site\\Bayer.Wcf.Site
-		SccProjectUniqueName11 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Reporting\\Bayer.eWF.BSL.Reporting.csproj
-		SccProjectTopLevelParentUniqueName11 = eWorkflow.sln
-		SccProjectName11 = 1.Com/2.BusinessLayer/Bayer.eWF.BSL.Reporting
-		SccLocalPath11 = 1.Com\\2.BusinessLayer\\Bayer.eWF.BSL.Reporting
-		SccProjectUniqueName12 = 5.WinExe\\Bayer.WinExe.Sap.Master\\Bayer.WinExe.Sap.Master.csproj
-		SccProjectTopLevelParentUniqueName12 = eWorkflow.sln
-		SccProjectName12 = 5.WinExe/Bayer.WinExe.Sap.Master
-		SccLocalPath12 = 5.WinExe\\Bayer.WinExe.Sap.Master
-		SccProjectUniqueName13 = 4.WinServices\\Bayer.WinSvc.PushNoticeMail\\Bayer.WinSvc.SendNoticeMail.csproj
-		SccProjectTopLevelParentUniqueName13 = eWorkflow.sln
-		SccProjectName13 = 4.WinServices/Bayer.WinSvc.PushNoticeMail
-		SccLocalPath13 = 4.WinServices\\Bayer.WinSvc.PushNoticeMail
-		SccWebProject14 = true
-		SccProjectUniqueName14 = http://localhost:56680/eWorks
-		SccProjectTopLevelParentUniqueName14 = eWorkflow.sln
-		SccProjectName14 = 2.Web/eWorkflow
-		SccLocalPath14 = 2.Web\\eWorkflow
-		SccProjectEnlistmentChoice14 = 2
 	EndGlobalSection
 EndGlobal

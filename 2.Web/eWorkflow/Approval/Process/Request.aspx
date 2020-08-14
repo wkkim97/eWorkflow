@@ -105,7 +105,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Recipient</th>
+                    <th>Action Taker (Recipient) </th>
                 </tr>
                 <tr>
                     <td>
@@ -117,7 +117,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Reviewer</th>
+                    <th>Informed (Reviewer)</th>
                 </tr>
                 <tr>
                     <td>
@@ -137,7 +137,7 @@
     <input id="hddDocumentID" type="hidden" runat="server" />
     <input id="hddDocumentName" type="hidden" runat="server" />
     <input id="hddSubject" type="hidden" runat="server" />
-    <input id="hddFolderPath" type="text" runat="server" />
+    <input id="hddFolderPath" type="hidden" runat="server" />
     <input id="hddXmlFiles" type="hidden" runat="server" />
      <input id="hddReqFiles" type="hidden" runat="server" />
     <input id="hddRejectedProcessId" type="hidden" runat="server" />

@@ -35,6 +35,8 @@ public partial class Common_Popup_PopupEngDivision : DNSoft.eWF.FrameWork.Web.Pa
 
             if (Sessions.CompanyCode == "0963")
                 strSUB_CODE = "S025";
+            else if (Sessions.CompanyCode == "2646")
+                strSUB_CODE = "S030";
             else strSUB_CODE = "S009";
 
 

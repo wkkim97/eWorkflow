@@ -88,7 +88,8 @@ public partial class Approval_Document_InternalEvent : DNSoft.eWF.FrameWork.Web.
                 else if (doc.BU.Equals(this.radBtnCS.Value)) this.radBtnCS.Checked = true;
                 else if (doc.BU.Equals(this.radBtnAH.Value)) this.radBtnAH.Checked = true;
                 else if (doc.BU.Equals(this.radBtnCPL.Value)) this.radBtnCPL.Checked = true;
-                                
+                else if (doc.BU.Equals(this.radBtnMonsanto.Value)) this.radBtnMonsanto.Checked = true;
+
                 this.radTxtVenue.Text = doc.MEETING_VENUE;
                 if (doc.FROM_DATE.HasValue)
                 {
@@ -195,6 +196,8 @@ public partial class Approval_Document_InternalEvent : DNSoft.eWF.FrameWork.Web.
         else if (this.radBtnCS.Checked) rtnValue = this.radBtnCS.Value;
         else if (this.radBtnAH.Checked) rtnValue = this.radBtnCH.Value;
         else if (this.radBtnCPL.Checked) rtnValue = this.radBtnCPL.Value;
+        else if (this.radBtnMonsanto.Checked) rtnValue = this.radBtnMonsanto.Value;
+        
 
         return rtnValue;
     }

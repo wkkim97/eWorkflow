@@ -72,13 +72,14 @@
                         <td>
                             <telerik:RadButton ID="radBKL" runat="server" Text="BKL" Value="BKL" GroupName="COMPANY_SEAL"  ButtonType="ToggleButton" ToggleType="Radio" OnClick="RadCompany_Click"></telerik:RadButton>
                             <telerik:RadButton ID="radBCS" runat="server" Text="BCS" Value="BCS" GroupName="COMPANY_SEAL"  ButtonType="ToggleButton" ToggleType="Radio" OnClick="RadCompany_Click"></telerik:RadButton>
+                            <telerik:RadButton ID="radMKR" runat="server" Text="MKR" Value="MKR" GroupName="COMPANY_SEAL"  ButtonType="ToggleButton" ToggleType="Radio" OnClick="RadCompany_Click"></telerik:RadButton>
                         </td>
                     </tr>
                     <tr>
                         <th>날인Type <span class="text_red">*</span></th>
                         <td>
-                            <telerik:RadButton ID="RadElectronic" runat="server" Text="전자도장" Value="Electronic" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" ></telerik:RadButton>
                             <telerik:RadButton ID="RadPaper" runat="server" Text="실제도장" Value="Paper" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" ></telerik:RadButton>
+                            <telerik:RadButton ID="RadElectronic" runat="server" Text="전자도장" Value="Electronic" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" Enabled="false" ></telerik:RadButton>
                         </td>
                     </tr>
                     <tr id="rowSealHolder" >
@@ -86,40 +87,70 @@
                         <td>
                             <telerik:RadDropDownList ID="radDropSeal" runat="server" Width="300px" DropDownHeight="300px" DefaultMessage="--- Select ---" AutoPostBack="false">
                                     <Items>
-                                        <telerik:DropDownListItem Text="BCS-HQ" Value="HQ"  />
-                                        <telerik:DropDownListItem Text="BCS-HQ-SMM" Value="HQS" />
-                                        <telerik:DropDownListItem Text="BCS-Development-Seoul" Value="DEV_S" />
-                                        <telerik:DropDownListItem Text="BCS-Development-Pyeongtaek" Value="DEV_P" />
-                                        <telerik:DropDownListItem Text="BCS-PS-Daejeon" Value="PS_DJ" />
-                                        <telerik:DropDownListItem Text="BCS-BVS" Value="BVS" />
-                                        <telerik:DropDownListItem Text="BCS-HR" Value="HR" />
-                                        <telerik:DropDownListItem Text="BCS-JungBu branch" Value="JungBu" />
-                                        <telerik:DropDownListItem Text="BCS-ChungCheong branch" Value="ChungCheong" />
-                                        <telerik:DropDownListItem Text="BCS-HoNam branch" Value="HoNam" />
-                                        <telerik:DropDownListItem Text="BCS-KyungBuk branch" Value="KyungBuk" />
-                                        <telerik:DropDownListItem Text="BCS-KyungNam branch" Value="KyungNam" />
-                                        <%--
-                                        <telerik:DropDownListItem Text="Kyunggi branch" Value="KG_B" />
-                                        <telerik:DropDownListItem Text="Gangwon branch" Value="GW_B" />
-                                        <telerik:DropDownListItem Text="Chungbuk branch" Value="CB_B" />
-                                        <telerik:DropDownListItem Text="Chungnam branch" Value="CG_B" />
-                                        <telerik:DropDownListItem Text="Junbuk branch" Value="JB_B" />
-                                        <telerik:DropDownListItem Text="Junnam branch" Value="JN_B" />
-                                        <telerik:DropDownListItem Text="Daegu branch" Value="DG_B" />
-                                        <telerik:DropDownListItem Text="Kyungnam branch" Value="KN_B" />
-                                        <telerik:DropDownListItem Text="Andong branch" Value="AD_B" />
-                                        <telerik:DropDownListItem Text="Jeju branch" Value="JJ_B" />
-                                        --%>
-                                        <telerik:DropDownListItem Text="BKL-CFO Functions(Other than BS)" Value="CFO" />
-                                        <telerik:DropDownListItem Text="BKL-Human Resources" Value="BKL-HR" />
-                                        <telerik:DropDownListItem Text="BKL-Law Patent & Compliance" Value="LPC" />
-                                        <telerik:DropDownListItem Text="BKL-Pharmaceuticals" Value="PH" />
-                                        <telerik:DropDownListItem Text="BKL-Pharmaceuticals-Medical" Value="MEDICAL" />
-                                        <telerik:DropDownListItem Text="BKL-Pharmaceuticals–Site Management" Value="SM" />
-                                        <telerik:DropDownListItem Text="BKL-Pharmaceuticals-Production(Ansung)" Value="ANSUNG" />
-                                        <telerik:DropDownListItem Text="BKL-Pharmaceuticals-Regulatory Affairs" Value="RA" />
-                                        <telerik:DropDownListItem Text="BKL-Radiology" Value="RAD" />
-                                        <telerik:DropDownListItem Text="BKL-Consumer Health" Value="CH" />
+                                        <telerik:DropDownListItem Text="BCS-Management" Value="BCS-Management" />          <%--  기존 HQ --%>
+                                        <telerik:DropDownListItem Text="BCS-Human Resource" Value="BCS-Human Resource" />  <%--  기존 HR --%>
+                                        <telerik:DropDownListItem Text="BCS-Procurement" Value="BCS-Procurement" />  <%--  2020년에 새롭게 추가됨. --%>
+                                        <telerik:DropDownListItem Text="BCS-Development-Pyeongtaek" Value="BCS-Development-Pyeongtaek" /> <%--  기존 DEV_P --%>
+                                        <telerik:DropDownListItem Text="BCS-PS-Daejeon" Value="BCS-PS-Daejeon" /> <%--  기존 PS_DJ --%>
+
+                                        <telerik:DropDownListItem Text="BCS-JungBu Branch" Value="BCS-JungBu Branch" />   <%--  기존 JungBu --%>
+                                        <telerik:DropDownListItem Text="BCS-ChungCheong Branch" Value="BCS-ChungCheong Branch" />   <%--  기존 ChungCheong --%>
+                                        <telerik:DropDownListItem Text="BCS-HoNam Branch" Value="BCS-HoNam Branch" />   <%--  기존 HoNam --%>
+                                        <telerik:DropDownListItem Text="BCS-KyungBuk Branch" Value="BCS-KyungBuk Branch" />   <%--  기존 KyungBuk --%>
+                                        <telerik:DropDownListItem Text="BCS-KyungNam Branch" Value="BCS-KyungNam Branch" />     <%--  기존 KyungNam --%>
+                                        <telerik:DropDownListItem Text="BCS-Jeju Branch" Value="BCS-Jeju Branch" />     <%--  2020년에 새롭게 추가됨--%>
+
+                                        <telerik:DropDownListItem Text="BCS-CFO Functions" Value="BCS-CFO Functions" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-O2C/WSO/CM" Value="BCS-O2C/WSO/CM" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-ACCP" Value="BCS-ACCP" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-PRO" Value="BCS-PRO" /> <%--  NEW --%>
+
+
+                                        <telerik:DropDownListItem Text="BKL-CFO Functions" Value="BKL-CFO Functions" />  <%--  기존 CFO --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-O2C/WSO/CM" Value="BKL-CPL-CFO-O2C/WSO/CM" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-ACCP" Value="BKL-CPL-CFO-ACCP" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-PRO" Value="BKL-CPL-CFO-PRO" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-QO" Value="BKL-CPL-CFO-QO" />    <%-- BKL-Production(Ansung) 에서 이름변경--%>
+                                        <telerik:DropDownListItem Text="BKL-Human Resources" Value="BKL-Human Resources" />     <%--  기존 BKL-HR --%>
+                                        <telerik:DropDownListItem Text="BKL-Law Patent & Compliance" Value="BKL-Law Patent & Compliance" /> <%-- 2020년에 새롭게 추가됨. --%>
+                                        <telerik:DropDownListItem Text="BKL-Heart Health" Value="BKL-Heart Health" />
+                                        <telerik:DropDownListItem Text="BKL-Specialty Medicine" Value="BKL-Specialty Medicine" />
+                                        <telerik:DropDownListItem Text="BKL-Womens Healthcare" Value="BKL-Womens Healthcare" />
+                                        <telerik:DropDownListItem Text="BKL-Medical" Value="BKL-Medical" />  <%--  기존 MEDICAL --%>
+                                        <telerik:DropDownListItem Text="BKL-Market Access" Value="BKL-Market Access" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-Commercial Excellence & Digital" Value="BKL-Commercial Excellence & Digital" />  <%--  NEW --%>
+                                       
+
+
+                                        <telerik:DropDownListItem Text="BKL-Regulatory Affairs" Value="BKL-Regulatory Affairs" />
+                                        <telerik:DropDownListItem Text="BKL-Site Management" Value="BKL-Site Management" />
+                                        <telerik:DropDownListItem Text="BKL-Radiology" Value="BKL-Radiology" />
+                                        <telerik:DropDownListItem Text="BKL-Consumer Health" Value="BKL-Consumer Health" />
+
+                                        <telerik:DropDownListItem Text="MKR-Finance" Value="MKR-Finance" />
+                                        <telerik:DropDownListItem Text="MKR-R&D" Value="MKR-R&D" />
+                                        <telerik:DropDownListItem Text="MKR-Seed&Trait Regulatory Science" Value="MKR-Seed&Trait Regulatory Science" />
+                                        <telerik:DropDownListItem Text="MKR-HR" Value="MKR-HR" />
+
+                                        <telerik:DropDownListItem Text="BCS-HQ" Value="HQ" Visible="false" />
+                                        <telerik:DropDownListItem Text="BCS-HQ-SMM" Value="HQS" Visible="false" />
+                                        <telerik:DropDownListItem Text="BCS-Development-Seoul" Value="DEV_S" Visible="false" />
+                                        <telerik:DropDownListItem Text="BCS-BVS" Value="BVS" Visible="false" />
+                                        <telerik:DropDownListItem Text="BCS-HR" Value="HR" Visible="false" />
+
+                                        
+                                        <telerik:DropDownListItem Text="Kyunggi branch" Value="KG_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Gangwon branch" Value="GW_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Chungbuk branch" Value="CB_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Chungnam branch" Value="CG_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Junbuk branch" Value="JB_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Junnam branch" Value="JN_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Daegu branch" Value="DG_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Kyungnam branch" Value="KN_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Andong branch" Value="AD_B" Visible="false" />
+                                        <telerik:DropDownListItem Text="Jeju branch" Value="JJ_B" Visible="false" />
+                                        
+                                        
                                     </Items>
                            </telerik:RadDropDownList>
                         </td>

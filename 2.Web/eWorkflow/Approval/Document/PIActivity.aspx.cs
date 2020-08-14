@@ -100,9 +100,8 @@ public partial class Approval_Document_PIActivity : DNSoft.eWF.FrameWork.Web.Web
                     radBtnBVS.Checked = true;
                     radBtnBVS.Visible = true;
                 }
-
-
                 else if (doc.BU.Equals(this.radBtnES.Value)) this.radBtnES.Checked = true;
+                else if (doc.BU.Equals(this.radBtnMKR.Value)) this.radBtnMKR.Checked = true;
 
                 //eWorkflow Optimization 2020
                 if (doc.REQUEST_TYPE.Equals(this.radBtnRequestTypeActivity.Value)) this.radBtnRequestTypeActivity.Checked = true;
@@ -232,6 +231,7 @@ public partial class Approval_Document_PIActivity : DNSoft.eWF.FrameWork.Web.Web
         else if (this.radBtnIS.Checked) rtnValue = this.radBtnIS.Value;
         else if (this.radBtnBVS.Checked) rtnValue = this.radBtnBVS.Value;
         else if (this.radBtnES.Checked) rtnValue = this.radBtnES.Value;
+        else if (this.radBtnMKR.Checked) rtnValue = this.radBtnMKR.Value;
 
         return rtnValue;
     }

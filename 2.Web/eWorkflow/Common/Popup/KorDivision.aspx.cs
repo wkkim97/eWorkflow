@@ -35,6 +35,8 @@ public partial class Common_Popup_KorDivision : DNSoft.eWF.FrameWork.Web.PageBas
 
             if (Sessions.CompanyCode == "0963")
                 strSUB_CODE = "S026";
+            else if (Sessions.CompanyCode == "2646")
+                strSUB_CODE = "S031";
             else strSUB_CODE = "S010";
 
 

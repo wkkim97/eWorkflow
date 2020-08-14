@@ -243,6 +243,9 @@
                             <telerik:RadButton ID="radBtnES" runat="server" Text="ES" Value="ES" GroupName="BU"
                                 AutoPostBack="false" ButtonType="ToggleButton" ToggleType="Radio">
                             </telerik:RadButton>
+                            <telerik:RadButton ID="radBtnMKR" runat="server" Text="MKR" Value="MKR" GroupName="BU"
+                                AutoPostBack="false" ButtonType="ToggleButton" ToggleType="Radio">
+                            </telerik:RadButton>
                         </td>
                     </tr>
                     <tr>
