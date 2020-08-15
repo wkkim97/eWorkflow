@@ -65,4 +65,11 @@ namespace Bayer.eWF.BSL.Common.Dto
     {
         public string url { get; set; }
     }
+    class DTO_DOCUSIGN_URL_CALLBACK_TEST
+    {
+        public string envelopeId { get; set; }
+        public string documentsUri { get; set; }
+
+        public string url { get; set; }
+    }
 }

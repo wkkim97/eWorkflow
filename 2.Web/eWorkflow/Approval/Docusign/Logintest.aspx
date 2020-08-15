@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Docusign_Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Logintest.aspx.cs" Inherits="Docusign_Logintest" %>
 
 <!doctype html>
 <html>
@@ -12,20 +12,16 @@
 <body>
     전자 승인을 위해 Docusign 로그인 페이지로 이동합니다.
     <input type="hidden" id="integrationKey" runat="server" />
-    <input type="text" id="redirect" runat="server" />
+    <input type="hidden" id="redirect" runat="server" />
     <input type="hidden" id="userEmail" runat="server" />
     <input type="hidden" id="state" runat="server" />
-    <input type="text" id="documentNo" runat="server" />
     <script>
 
         var integrationKey = document.getElementById("integrationKey").value;
         var redirect = document.getElementById("redirect").value;
         var userEmail = document.getElementById("userEmail").value;
         var state = document.getElementById("state").value;
-        var documentNo = document.getElementById("documentNo").value;
-
-        var addr = "https://account.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=" + integrationKey + "&redirect_uri=" + redirect + "&login_hint=" + userEmail + "&state=" + state + "|" + documentNo;
-        //return;
+        var addr = "https://account-d.docusign.com/oauth/auth?response_type=code&scope=signature&client_id=" + integrationKey + "&redirect_uri=" + redirect + "&login_hint=" + userEmail + "&state=" + state;
         location.href = addr;
 
     </script>

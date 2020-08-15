@@ -45,11 +45,11 @@ public partial class Templete_DocusignCallbackTest : DNSoft.eWF.FrameWork.Web.We
         }
     }
     [System.Web.Services.WebMethod()]
-    public static string CreateEnvelope(string accessToken, string filePath, string fileName, string cdName, string cdEmail)
+    public static string CreateEnvelope(string accessToken, string filePath, string fileName, string cdName, string cdEmail,string documentNo)
     {
         using (Bayer.eWF.BSL.Common.Mgr.DocusignMgr mgr = new Bayer.eWF.BSL.Common.Mgr.DocusignMgr())
         {
-            string result = mgr.CreateEnvelope(accessToken, filePath, fileName, cdName, cdEmail);
+            string result = mgr.CreateEnvelope(accessToken, filePath, fileName, cdName, cdEmail, documentNo);
             return result;
         }
     }
