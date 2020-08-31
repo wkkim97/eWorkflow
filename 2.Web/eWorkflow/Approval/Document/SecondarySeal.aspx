@@ -29,7 +29,9 @@
             //if (actionTaker == currentUser) { }
             $('.attachment-wrapper a[href^="javascript:fn_FileDownload"]').each(function (i, e) {
                 var documentId = $(e).attr("href").match(/javascript\:fn\_FileDownload\((\d*)\)/)[1];
-                if (documentId) $(e).parent().append('<button type="button" style="float:right;border-radius:2px;background-color:#e7e7e7;padding:2px 5px;" onclick="window.open(\'/eWorks/Approval/Docusign/Login.aspx?documentId=' + documentId + '\',\'_blank\')">Seal</button>')
+                var documentNo = $("#ApproveMenuBar_hspanDocumentNo").html() || "";
+                console.log(documentNo);
+                if (documentId) $(e).parent().append('<button type="button" style="float:right;border-radius:2px;background-color:#e7e7e7;padding:2px 5px;" onclick="window.open(\'/eWorks/Approval/Docusign/Login.aspx?documentId=' + documentId + '&documentNo=' + documentNo+ '\',\'_blank\')">Seal</button>')
             });
         });
     </script>

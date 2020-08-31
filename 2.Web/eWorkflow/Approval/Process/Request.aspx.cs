@@ -110,6 +110,9 @@ public partial class Approval_Process_Request : DNSoft.eWF.FrameWork.Web.PageBas
         catch (Exception ex)
         {
             this.errorMessage = ex.ToString();
+            //Bayer.eWF.BSL.Common.Mgr.SystemLogMgr.InsertSystemLog("Error", string.Format("{0}.{1}", this.GetType().Name, MethodInfo.GetCurrentMethod().Name), ex.ToString(), string.Empty);
+
+
         }
         finally
         {

@@ -62,7 +62,7 @@ namespace Bayer.eWF.BSL.Common.Mgr
                 {
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
                     var response = client.GetAsync(baseAuthURI + "/oauth/userinfo").Result;
-
+                    
                     DTO_DOCUSIGN_USER_INFO info = response.Content.ReadAs<DTO_DOCUSIGN_USER_INFO>();
 
                     return String.Format("{{\"success\": true, \"code\": {0}, \"data\": {{\"accountId\": \"{1}\", \"name\": \"{2}\", \"email\": \"{3}\"}}}}", (int)response.StatusCode, info.accounts[0].account_id, info.name, info.email);
@@ -99,7 +99,7 @@ namespace Bayer.eWF.BSL.Common.Mgr
                 return String.Format("{{\"success\": false, \"message\": \"{0}\"}}", e.ToString());
             }
         }
-        public string CreateEnvelope(string accessToken, string filePath, string fileName, string cdName, string cdEmail)
+        public string CreateEnvelope(string accessToken, string filePath, string fileName, string cdName, string cdEmail,string documentNo)
         {
 
             try
@@ -119,10 +119,17 @@ namespace Bayer.eWF.BSL.Common.Mgr
 
                 //사용자 정보 가져오기
                 DTO_DOCUSIGN_USER_INFO info = GetUserInfo(accessToken);
-                string accountId = info.accounts[0].account_id;
+                string accountId = "";
+                for (int i = 0; i < info.accounts.Length; i++)
+                {
+                    if (info.accounts[i].is_default)
+                    {
+                        accountId = info.accounts[i].account_id;
+                    }
+                }
                 string username = info.name;
                 string useremail = info.email;
-
+                
                 DTO_DOCUSIGN_ENVELOPE_CALLBACK result1;
                 //만들어 보내기
                 using (var client = getClient())
@@ -131,7 +138,7 @@ namespace Bayer.eWF.BSL.Common.Mgr
                     DTO_DOCUSIGN_ENVELOPE_PAYLOAD payload = new DTO_DOCUSIGN_ENVELOPE_PAYLOAD()
                     {
                         status = "sent",
-                        emailSubject = "Sent from the DocuSign via E-Workflow",
+                        emailSubject = String.Format("{0} via eWorkflow", documentNo),
                         documents = new DTO_DOCUSIGN_DOCUMENT[] {
                             new DTO_DOCUSIGN_DOCUMENT() {
                                 documentId = "1",
@@ -186,9 +193,46 @@ namespace Bayer.eWF.BSL.Common.Mgr
             }
             catch (Exception e)
             {
+                return String.Format("{{\"success\": false, \"data\": \"{0}\"}}", e.Message);
+            }
+        }
+
+        public string goLivetest(string accessToken,   string envelopeId)
+        {
+
+            try
+            {
+                
+               
+                //사용자 정보 가져오기
+                DTO_DOCUSIGN_USER_INFO info = GetUserInfo(accessToken);
+                string accountId = info.accounts[0].account_id;
+                string username = info.name;
+                string useremail = info.email;
+
+                //DTO_DOCUSIGN_ENVELOPE_CALLBACK result1;
+                //만들어 보내기
+                using (var client = getClient())
+                {
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                    var response = client.GetAsync(baseSignURI + "/restapi/v2.1/accounts/" + accountId + "/envelopes/" + envelopeId+ "/custom_fields" ).Result;
+                    //response = client.GetAsync(baseSignURI + "/restapi/v2.1/accounts/envelopes/status").Result;
+
+                    DTO_DOCUSIGN_URL_CALLBACK_TEST result2 = response.Content.ReadAs<DTO_DOCUSIGN_URL_CALLBACK_TEST>();
+
+                    return String.Format("{{\"success\": true, \"code\": {0}, \"data\": \"{1}\"}}", (int)response.StatusCode, response);
+
+
+                }
+            }
+            catch (Exception e)
+            {
                 return String.Format("{{\"success\": false, \"message\": \"{0}\"}}", e.Message);
             }
         }
+
+
         #endregion
         private static string Base64Encode(string plainText)
         {
@@ -203,7 +247,7 @@ namespace Bayer.eWF.BSL.Common.Mgr
                 Address = new Uri(proxyURI),
                 BypassProxyOnLocal = false,
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("AD-BAYER-CNB\\GIUND", "0506Jinfanrong!")
+                Credentials = new NetworkCredential("AD-BAYER-CNB\\MWCXC", "L0calAppl61!")
 
             };
             // Now create a client handler which uses that proxy

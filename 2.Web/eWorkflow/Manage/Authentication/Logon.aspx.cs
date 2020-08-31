@@ -175,18 +175,24 @@ public partial class Manage_Authentication_Logon : System.Web.UI.Page
                     dsCon = DNSoft.eW.FrameWork.eWDictionary.GetUserLogin(strUserID);
                     
                     //Covestro 분사로 인하여 Company code Checking :2015.7.1 - START
+                    //AH 분사로 인하여 2020.07.29 
                     foreach(DataRow dr in dsCon.Tables[0].Rows){
-                        if (dr["COMPANY_CODE"].ToString().Equals("1117") || dr["ORG_ACRONYM"].ToString().Contains("BKL-BMS"))                        {
+                        if (dr["COMPANY_CODE"].ToString().Equals("1117") || dr["ORG_ACRONYM"].ToString().Contains("BKL-BMS") || dr["ORG_ACRONYM"].ToString().Contains("BKL-AH"))                        {
                             COMPANY_COVESTRO = true;
                         }                        
                     }
-                   
+                    COMPANY_COVESTRO = false;
 
                     if (dsCon == null || dsCon.Tables.Count < 1 || dsCon.Tables[0].Rows.Count < 1 || COMPANY_COVESTRO)
                     //Covestro 분사로 인하여 Company code Checking :2015.7.1 -END
                     {
                         htxtMessage.Value = "해당 사용자가 없습니다.";
                         informationMessage.Value = "아이디 또는 비밀번호를 확인하여 주십시오.";
+                        if (COMPANY_COVESTRO)
+                        {
+                            informationMessage.Value = "AH 유저는 접근이 불가능 합니다.";
+                        }
+                        
                     }
                     else
                     {
