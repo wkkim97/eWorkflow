@@ -54,6 +54,7 @@
     <Compile Include="ApprovalContext.cs" />
     <Compile Include="Dao\AbsenceDao.cs" />
     <Compile Include="Dao\AfterTreatmentDao.cs" />
+    <Compile Include="Dao\BKLPromotionalActivityDao.cs" />
     <Compile Include="Dao\BKLSpecialPriceandDiscountDao.cs" />
     <Compile Include="Dao\InternalEventDao.cs" />
     <Compile Include="Dao\BaseDiscountPriceDao.cs" />
@@ -114,6 +115,8 @@
     <Compile Include="Dto\CreditDebitNoteViewDto.cs" />
     <Compile Include="Dto\DTO_ABSENCE.cs" />
     <Compile Include="Dto\DTO_APPROVAL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PROMOTIONAL_ACTIVITY_COST_DETAIL.cs" />
+    <Compile Include="Dto\DTO_DOC_BKL_PROMOTIONAL_ACTIVITY.cs" />
     <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT.cs" />
     <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_HOSPITAL.cs" />
     <Compile Include="Dto\DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_CUSTOMER.cs" />
@@ -280,6 +283,7 @@
     <Compile Include="Mgr\MembershipApplicationMgr.cs" />
     <Compile Include="Mgr\MortgageManagementMgr.cs" />
     <Compile Include="Mgr\AHPIActivityMgr.cs" />
+    <Compile Include="Mgr\BKLPromotionalActivityMgr.cs" />
     <Compile Include="Mgr\PIActivityMgr.cs" />
     <Compile Include="Mgr\BvsSeedImportMgr.cs" />
     <Compile Include="Mgr\RebatePolicyMgr.cs" />
