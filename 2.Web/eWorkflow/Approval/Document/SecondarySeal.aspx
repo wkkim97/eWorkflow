@@ -25,10 +25,12 @@
         $("document").ready(function () {
             var actionTaker = $(".action-taker-wrapper").attr("userid");
             var currentUser = $("#HolderDocumentBody_UserID").val();
-            console.log(actionTaker, currentUser)
+            console.log(actionTaker, currentUser);
+            if ($("#ApproveMenuBar_hspanDocumentNo").html().length <= 0) return;
             //if (actionTaker == currentUser) { }
             $('.attachment-wrapper a[href^="javascript:fn_FileDownload"]').each(function (i, e) {
                 var documentId = $(e).attr("href").match(/javascript\:fn\_FileDownload\((\d*)\)/)[1];
+                console.log("333");
                 var documentNo = $("#ApproveMenuBar_hspanDocumentNo").html() || "";
                 console.log(documentNo);
                 if (documentId) $(e).parent().append('<button type="button" style="float:right;border-radius:2px;background-color:#e7e7e7;padding:2px 5px;" onclick="window.open(\'/eWorks/Approval/Docusign/Login.aspx?documentId=' + documentId + '&documentNo=' + documentNo+ '\',\'_blank\')">Seal</button>')
