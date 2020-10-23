@@ -83,7 +83,7 @@
                         <th>날인Type <span class="text_red">*</span></th>
                         <td>
                             <telerik:RadButton ID="RadPaper" runat="server" Text="실제도장" Value="Paper" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" ></telerik:RadButton>
-                            <telerik:RadButton ID="RadElectronic" runat="server" Text="전자도장" Value="Electronic" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" Enabled="false" ></telerik:RadButton>
+                            <telerik:RadButton ID="RadElectronic" runat="server" Text="전자도장" Value="Electronic" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" Enabled="true" ></telerik:RadButton>
                         </td>
                     </tr>
                     <tr id="rowSealHolder" >

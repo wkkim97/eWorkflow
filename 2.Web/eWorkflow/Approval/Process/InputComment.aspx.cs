@@ -123,6 +123,7 @@ public partial class Approval_Process_InputComment : DNSoft.eWF.FrameWork.Web.Pa
         string script = string.Empty;
         try
         {
+            this.btnSaved.Enabled = false;
             DoInputComment();
             script = AfterTreatmentScript();
             ClientWindowClose("true", script);

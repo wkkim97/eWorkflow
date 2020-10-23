@@ -51,10 +51,10 @@ public partial class Docusign_DocusignCallback : DNSoft.eWF.FrameWork.Web.WebBas
             cdEmail = one.MAIL_ADDRESS;
         }
 
-        //this.cdName.Value = cdName;
-        //this.cdEmail.Value = cdEmail;
-        this.cdName.Value = "WooKyung Kim";
-        this.cdEmail.Value = "wookyung.kim@bayer.com";
+        this.cdName.Value = cdName;
+        this.cdEmail.Value = cdEmail;
+        //this.cdName.Value = "WooKyung Kim";
+        //this.cdEmail.Value = "wookyung.kim@bayer.com";
     }
 
     [System.Web.Services.WebMethod()]

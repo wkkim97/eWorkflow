@@ -22,11 +22,13 @@
 		// 3. Confirm이 있는 경우 팝업 출력
 		if ( document.getElementById("confirmMessage").value.length > 0 )
 			return fn_OpenConfirm(document.getElementById("confirmMessage").value);
-		
+        //alert("333333");
 		// 4. 팝업창 닫기
-		var strClose = ""
-		strClose = document.getElementById("winClosed").value;
-		if ( strClose == "closed" ){
+        var strClose = ""
+        strClose = document.getElementById("winClosed").value;
+        console.log(strClose);
+        if (strClose == "closed") {
+            alert("windowonload");
 			if ( document.getElementById("winClosedReturn").value.length > 0 )
 					window.returnValue = document.getElementById("winClosedReturn").value;
 			window.close();

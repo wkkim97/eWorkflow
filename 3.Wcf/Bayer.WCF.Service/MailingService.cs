@@ -71,7 +71,8 @@ namespace Bayer.WCF.Service
         }
         public static void WriteLog(string sMessage)
         {
-            string strLogDir = @"f:\Project\Debug\Log";
+            //test 서버는 f 폴더가 없어서 D 로 변경
+            string strLogDir = @"d:\Project\Debug\Log";
             string strLogWriteYN = "Y";
 
             string strFullPath = string.Format(@"{0}\{1} SendNoticeMailServiceLog.txt", strLogDir, DateTime.Now.ToString("yyyy-MM-dd"));

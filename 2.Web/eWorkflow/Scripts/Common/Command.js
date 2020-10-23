@@ -49,9 +49,10 @@ function fn_RemindClicked(sender, args) {
     fn_OpenConfirm("Do you want to send the remider mail?", function (args) {
         if (args) {
             var processid = $("[id$=hddProcessID]").val();
-            fn_sendMail(processid, 'Remind',"kr_workflow@bayer.com");
+            fn_sendMail(processid, 'Remind', "kr_workflow@bayer.com");            
             var oWnd = GetRadWindow();
             oWnd.close();
+            
         }
     });
 
@@ -89,10 +90,13 @@ function fn_HelpClicked() {
 }
 
 function fn_CloseApprovalLine(sender, args) {
+    alert(args);
+    console.log(args);
     if (args.get_argument() != null || args.get_argument() != undefined) {
+
         if (args.get_argument().returnValue) {
-            window.location.reload();
-            window.close();
+            //window.location.reload();
+            //window.close();
         }
     }
 }

@@ -102,15 +102,17 @@ public partial class Approval_Process_Request : DNSoft.eWF.FrameWork.Web.PageBas
         string script = string.Empty;
         try
         {
+            this.btnRequest.Enabled = false;
             CreateProcessApproval();
             RegisteAttachFiles();
             script = AfterTreatmentScript();
+            
             ClientWindowClose("true", script);
         }
         catch (Exception ex)
         {
             this.errorMessage = ex.ToString();
-            //Bayer.eWF.BSL.Common.Mgr.SystemLogMgr.InsertSystemLog("Error", string.Format("{0}.{1}", this.GetType().Name, MethodInfo.GetCurrentMethod().Name), ex.ToString(), string.Empty);
+            Bayer.eWF.BSL.Common.Mgr.SystemLogMgr.InsertSystemLog("Error", string.Format("{0}.{1}", this.GetType().Name, MethodInfo.GetCurrentMethod().Name), ex.ToString(), string.Empty);
 
 
         }

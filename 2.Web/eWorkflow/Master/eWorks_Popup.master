@@ -26,9 +26,9 @@
                 </telerik:RadWindowManager>
             </div>
         </div>
-        <script src="/eWorks/Scripts/Common.min.js"></script>
+        <script src="/eWorks/Scripts/Common.js"></script>
         <script src="/eWorks/Scripts/ControlUtil.min.js"></script>
-        <script src="/eWorks/Scripts/FormEvent.min.js"></script>
+        <script src="/eWorks/Scripts/FormEvent.js"></script>
 
     </form>
 </body>

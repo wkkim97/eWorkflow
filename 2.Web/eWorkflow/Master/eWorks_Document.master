@@ -283,7 +283,7 @@
         </div>
         <script src="/eWorks/Scripts/Common.js"></script>
         <script src="/eWorks/Scripts/ControlUtil.min.js"></script>
-        <script src="/eWorks/Scripts/FormEvent.min.js"></script>
+        <script src="/eWorks/Scripts/FormEvent.js"></script>
         <script src="/eWorks/Scripts/Common/InterFaseService.min.js"></script>
 
         <script src="/eWorks/Scripts/Common/lyncStatus.js"></script>

@@ -43,6 +43,7 @@ public partial class Approval_Process_Approve : DNSoft.eWF.FrameWork.Web.PageBas
         string script = string.Empty;
         try
         {
+            this.btnOk.Enabled = false;
             if (hddProcessType.Value.Equals(ApprovalUtil.ApprovalButtons.WITHDRAW.ToString()))
             {
                 DoWithdraw(ApprovalUtil.ApprovalStatus.Withdraw.ToString(), ApprovalUtil.LogType.Withdraw.ToString(), ApprovalUtil.ProcessStatus.ACEPTER);

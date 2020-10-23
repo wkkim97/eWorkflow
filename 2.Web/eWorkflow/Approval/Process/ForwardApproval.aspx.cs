@@ -64,6 +64,7 @@ public partial class Approval_Process_ForwardApproval : DNSoft.eWF.FrameWork.Web
         string script = string.Empty;
         try
         {
+            this.btnForward.Enabled = false;
             DoFowardApproval();
             script = AfterTreatmentScript();
             ClientWindowClose("true", script);
