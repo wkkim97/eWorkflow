@@ -143,6 +143,10 @@ namespace Bayer.eWF.BSL.Approval.Dto
         /// 
         /// </summary>
         public string REMARK { get; set; }
+        //INC0003399184 EXCEPTION SAMEDISCOUNT
+        public string EXCEPTION { get; set; }
+        public string SAMEDISCOUNT { get; set; }
+
 
         /// <summary>
         /// 

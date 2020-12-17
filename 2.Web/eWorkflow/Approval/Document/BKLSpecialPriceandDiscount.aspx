@@ -587,6 +587,32 @@
                         
                     </td>
                 </tr>
+                <tr>
+                    <th>Exception</th>
+                    <td>
+                        <div id="divExceptionGroup" runat="server" >
+                            <telerik:RadButton ID="radBtnExceptionYes" runat="server" Text="YES" Value="YES" GroupName="ExceptionGroup"
+                                    ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnExceptionGroup_Click" OnClientClicked="">
+                            </telerik:RadButton>
+                            <telerik:RadButton ID="radBtnExceptionNo" runat="server" Text="NO" Value="NO" GroupName="ExceptionGroup"
+                                ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnExceptionGroup_Click" OnClientClicked="">
+                            </telerik:RadButton>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Same Discount</th>
+                    <td>
+                        <div id="divSameDiscountGroup" runat="server" >
+                            <telerik:RadButton ID="radBtnDiscountYes" runat="server" Text="YES" Value="YES" GroupName="DiscountGroup"
+                                    ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" >
+                            </telerik:RadButton>
+                            <telerik:RadButton ID="radBtnDiscountNo" runat="server" Text="NO" Value="NO" GroupName="DiscountGroup"
+                                ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" >
+                            </telerik:RadButton>
+                        </div>
+                    </td>
+                </tr>
             </table>
         </div>
         <h3>Wholesaler and Hospital Information</h3>

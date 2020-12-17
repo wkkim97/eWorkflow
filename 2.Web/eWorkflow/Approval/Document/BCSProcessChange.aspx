@@ -89,11 +89,14 @@
                             <br />
                             <telerik:RadButton runat="server" ID="radChkCategory4" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="New product"                     Value="New product"                      width="170px" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton runat="server" ID="radChkCategory5" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Packaging material"              Value="Packaging material"               width="170px" AutoPostBack="false"></telerik:RadButton>
-                            <telerik:RadButton runat="server" ID="radChkCategory6" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="SOP or Document or Operation"    Value="SOP or Document or Operation"     width="170px" AutoPostBack ="false"></telerik:RadButton>
+                            <telerik:RadButton runat="server" ID="radChkCategory6" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="SOP or Document"    Value="SOP or Document"     width="170px" AutoPostBack ="false"></telerik:RadButton>
                             <br />
                             <telerik:RadButton runat="server" ID="radChkCategory7" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Supplier, Manufacturer and Site" Value="Supplier, Manufacturer and Site"  width="170px" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton runat="server" ID="radChkCategory8" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Tech and raw material"           Value="Tech and raw material"            width="170px" AutoPostBack="false"></telerik:RadButton>
-                            <telerik:RadButton runat="server" ID="radChkCategory9" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Testing method and equipment"    Value="Testing method and equipment"     width="170px" AutoPostBack="false"></telerik:RadButton>
+                            
+                            <telerik:RadButton runat="server" ID="radChkCategory10" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Legal or Compliance (LTO)"    Value="Legal or Compliance (LTO)"     width="170px" AutoPostBack="false"></telerik:RadButton>
+                            <telerik:RadButton runat="server" ID="radChkCategory11" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Organization"    Value="Organization"     width="170px" AutoPostBack="false"></telerik:RadButton>
+                            <telerik:RadButton runat="server" ID="radChkCategory9" CssClass="check" ButtonType="ToggleButton" ToggleType="CheckBox" Text="Testing and operation method of equipment (MoC)"    Value="Testing and operation method of equipment (MoC)"     width="340px" AutoPostBack="false"></telerik:RadButton>
                         </div>
                     </td>
                 </tr>

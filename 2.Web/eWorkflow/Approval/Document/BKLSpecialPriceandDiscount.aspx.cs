@@ -108,6 +108,32 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
                     }
                 }
 
+                //EXCEPTION
+                foreach (Control control in this.divExceptionGroup.Controls)
+                {
+                    if (control is RadButton)
+                    {
+                        if ((control as RadButton).Value == doc.Item1.EXCEPTION)
+                        {
+                            (control as RadButton).Checked = true;
+                            break;
+                        }
+                    }
+                }
+
+                //Saem Discount
+                foreach (Control control in this.divSameDiscountGroup.Controls)
+                {
+                    if (control is RadButton)
+                    {
+                        if ((control as RadButton).Value == doc.Item1.SAMEDISCOUNT)
+                        {
+                            (control as RadButton).Checked = true;
+                            break;
+                        }
+                    }
+                }
+
                 ////Product Family
 
                 //foreach (Control control in divProductFamily.Controls)
@@ -260,6 +286,12 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnWH, this.radGrdProduct);
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnCH, this.radGrdProduct);
 
+        //RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnExceptionYes, this.radGrdProduct);
+        //RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnExceptionNo, this.radGrdProduct);
+
+        RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnDiscountYes, this.radGrdProduct);
+        RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnDiscountNo, this.radGrdProduct);
+
 
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnCustomer, this.radGrdProduct);
        
@@ -386,6 +418,46 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         //radRadioCheck();
        
     }
+    //radBtnExceptionGroup_Click
+    protected void radBtnExceptionGroup_Click(object sender, EventArgs e)
+    {
+        string exceptionValue=GetExceptionValue();
+       
+        this.radBtnDiscountYes.Checked=false;
+        this.radBtnDiscountNo.Checked = false;
+        if (exceptionValue == "NO") { 
+            this.radBtnDiscountYes.ReadOnly=true;
+            this.radBtnDiscountNo.ReadOnly = true;
+        }
+        else
+        {
+            this.radBtnDiscountYes.ReadOnly = false;
+            this.radBtnDiscountNo.ReadOnly = false;
+        }
+        radRadioCheck();
+        List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT> list = (List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT>)ViewState[VIEWSTATE_KEY];
+        list.Clear();
+        this.radGrdProduct.DataSource = list;
+        this.radGrdProduct.DataBind();
+
+        //radRadioCheck();
+        //List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT> list = (List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT>)ViewState[VIEWSTATE_KEY];
+        //list.Clear();
+        //this.radGrdProduct.DataSource = list;
+        //this.radGrdProduct.DataBind();
+
+    }
+
+    //radBtnSameDiscountGroup_Click
+    protected void radBtnSameDiscountGroup_Click(object sender, EventArgs e)
+    {
+        radRadioCheck();
+        List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT> list = (List<DTO_DOC_BKL_SPECIAL_PRICE_AND_DISCOUNT_PRODUCT>)ViewState[VIEWSTATE_KEY];
+        list.Clear();
+        this.radGrdProduct.DataSource = list;
+        this.radGrdProduct.DataBind();
+
+    }
 
     private void radRadioCheck()
     {
@@ -493,6 +565,22 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         else if (this.radBtnWRP.Checked) type = this.radBtnWRP.Value;
         else if (this.radBtnWORP.Checked) type = this.radBtnWORP.Value;
         else if (this.radBtnCustomer.Checked) type = this.radBtnCustomer.Value;        
+        return type;
+    }
+
+    private string GetExceptionValue()
+    {
+        string type = string.Empty;
+        if (this.radBtnExceptionYes.Checked) type = this.radBtnExceptionYes.Value;
+        else if (this.radBtnExceptionNo.Checked) type = this.radBtnExceptionNo.Value;
+        return type;
+    }
+
+    private string GetSameDiscountValue()
+    {
+        string type = string.Empty;
+        if (this.radBtnDiscountYes.Checked) type = this.radBtnDiscountYes.Value;
+        else if (this.radBtnDiscountNo.Checked) type = this.radBtnDiscountNo.Value;
         return type;
     }
 
@@ -672,6 +760,8 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
 
         doc.BU = selectedbu;
         doc.TYPE = GetTypeValue();
+        doc.EXCEPTION = GetExceptionValue();
+        doc.SAMEDISCOUNT = GetSameDiscountValue();
         //if (selectedbu == "AH")
         //{
         //    doc.TYPE = GetTypeValueAH();

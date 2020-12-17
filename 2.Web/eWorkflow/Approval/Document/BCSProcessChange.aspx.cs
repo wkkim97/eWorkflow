@@ -100,6 +100,10 @@ public partial class Approval_Document_BCSProcessChange : DNSoft.eWF.FrameWork.W
                         this.radChkCategory8.Checked = true;
                     if (Catetory[i].ToString().Equals(this.radChkCategory9.Value))
                         this.radChkCategory9.Checked = true;
+                    if (Catetory[i].ToString().Equals(this.radChkCategory10.Value))
+                        this.radChkCategory10.Checked = true;
+                    if (Catetory[i].ToString().Equals(this.radChkCategory11.Value))
+                        this.radChkCategory11.Checked = true;
 
                 }
 
@@ -189,6 +193,8 @@ public partial class Approval_Document_BCSProcessChange : DNSoft.eWF.FrameWork.W
         if (radChkCategory7.Checked) Category = Category + radChkCategory7.Value + "/";
         if (radChkCategory8.Checked) Category = Category + radChkCategory8.Value + "/";
         if (radChkCategory9.Checked) Category = Category + radChkCategory9.Value + "/";
+        if (radChkCategory10.Checked) Category = Category + radChkCategory10.Value + "/";
+        if (radChkCategory11.Checked) Category = Category + radChkCategory11.Value + "/";
         return Category;
     }
 

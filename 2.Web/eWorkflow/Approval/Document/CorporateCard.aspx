@@ -191,9 +191,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">
-                            When you receive the new corporate credit card, please send e-mail to following e-mail address to register the new card no. at Concur.<br />
-새로운 카드를 수령 하시면 새 카드 번호가 컨커에 등록이 될 수 있도록 아래의 메일 주소로 등록 요청을 합니다.<br />
-<font color="blue">fass.travelexpenses.korea@bayer.com</font>
+                            새카드번호가 컨커에 등록 될 수 있도록 <b>080-653-0880</b> 으로 연락하셔서 등록해 주시기 바랍니다.
 
                         </td>
                     </tr>

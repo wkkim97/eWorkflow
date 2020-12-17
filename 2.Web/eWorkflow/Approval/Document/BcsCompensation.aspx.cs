@@ -301,7 +301,7 @@ public partial class Approval_Document_BcsCompensation : DNSoft.eWF.FrameWork.We
 
             var TotalAmount = this.radNumTotalAmount.Value;// +this.radNumProductAmount.Value;
 
-            if (TotalAmount < 1000000)
+            if (TotalAmount < 1000001)
             {
                 //message += message.IsNullOrEmptyEx() ? "Cash 100만원이하" : ", Cash 100만원이하";
                 if (radChkCheck1.Checked == false )
@@ -313,7 +313,7 @@ public partial class Approval_Document_BcsCompensation : DNSoft.eWF.FrameWork.We
                 if (radChkCheck7.Checked == false)
                     message += message.IsNullOrEmptyEx() ? "7.합의서" : ", 7.합의서";
             }
-            else if (TotalAmount >= 1000000 && TotalAmount < 5000000)
+            else if (TotalAmount >= 1000001 && TotalAmount < 5000000)
             {
                 //message += message.IsNullOrEmptyEx() ? "Cash 100만원 초가 500만원 이하" : ", Cash 100만원 초가 500만원 이하";
                 if (radChkCheck1.Checked == false)
