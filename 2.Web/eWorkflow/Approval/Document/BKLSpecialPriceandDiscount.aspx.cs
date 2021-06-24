@@ -526,6 +526,8 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
                 this.radGrdProduct.MasterTableView.GetColumn("NET_AMOUNT").Display = true;
                 if(typeValue.Equals("Special Supply w.o. R.P.")) 
                     (this.radGrdProduct.MasterTableView.GetColumn("W_H_DISCOUNT") as GridTemplateColumn).ReadOnly = true;
+                if (typeValue.Equals("Special Supply w R.P."))
+                    (this.radGrdProduct.MasterTableView.GetColumn("W_H_DISCOUNT") as GridTemplateColumn).ReadOnly = false;
             }
             else if (typeValue.Equals("Basic"))
             {                

@@ -904,7 +904,7 @@
                     <telerik:GridTemplateColumn DataField="DISCOUNT_RATE" HeaderText="Dicount<br/>Rate" HeaderStyle-Width="60px" UniqueName="DISCOUNT_RATE" 
                         ItemStyle-HorizontalAlign="Right" HeaderStyle-Font-Size="10px">                        
                         <ItemTemplate>
-                            <asp:Label ID="Label8" runat="server" Text='<%# String.Format("{0:#,##0.00}", Eval("TO_BE_DISCOUNT")) %>'></asp:Label>
+                            <asp:Label ID="Label8" runat="server" Text='<%# String.Format("{0:#,##0.00}", Eval("DISCOUNT_RATE")) %>'></asp:Label>
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:TextBox ID="radNumDiscountRate" runat="server" Width="100%" CssClass="input align_right"

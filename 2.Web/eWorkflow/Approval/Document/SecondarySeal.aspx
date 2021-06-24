@@ -14,9 +14,11 @@
         function setSeal(value) {
             if (value == 'Secondary') {
                 $('#rowSealHolder').show();
-                $('#title').text('Secondary Seal')
+                $('#title').text('Secondary Seal');
+                $('#rowNoteforCorporate').hide();
             } else if (value == 'Corporate') {
                 $('#rowSealHolder').hide();
+                $('#rowNoteforCorporate').show();
                 $('#title').text('Corporate Seal')
             }
         }
@@ -58,6 +60,9 @@
                                 ButtonType="ToggleButton" ToggleType="Radio" GroupName="Seal" OnClientCheckedChanged="fn_OnSealChanged">
                             </telerik:RadButton>
                         </div>
+                        <div id="rowNoteforCorporate" style="margin-left:10px;display:none">
+                            * 법인 인감의 경우 전자도장은 존재 하지 않습니다. 실제 도장을 선택하여 주세요.<br />&nbsp;&nbsp; 전자 도장을 선택하셔도 실제 도장으로 진행됩니다.
+                        </div>
                     </td>
                 </tr>
             </table>
@@ -84,6 +89,7 @@
                         <td>
                             <telerik:RadButton ID="RadPaper" runat="server" Text="실제도장" Value="Paper" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" ></telerik:RadButton>
                             <telerik:RadButton ID="RadElectronic" runat="server" Text="전자도장" Value="Electronic" GroupName="SIGN_TYPE"  ButtonType="ToggleButton" ToggleType="Radio" Enabled="true" ></telerik:RadButton>
+
                         </td>
                     </tr>
                     <tr id="rowSealHolder" >
@@ -168,6 +174,7 @@
                     <tr>
                         <th>Purpose & Details <span class="text_red">*</span></th>
                         <td>
+                            <p style="padding:1%;border:1px solid #ff0000;width:95.5%;margin-bottom:5px;background-color:#fcd2d2"><b>계약서에 날인하시는 경우</b>,<br /> 사전에 ConRADS를 통해 계약서 검토/승인을 득하신 후 ConRADS 승인번호를 함께 기입해주시기 바랍니다</p>
                             <telerik:RadTextBox runat="server" ID="RadtxtPurpose" Width="98%" TextMode="MultiLine" Height="80" CssClass="input"></telerik:RadTextBox>
                         </td>
                     </tr>

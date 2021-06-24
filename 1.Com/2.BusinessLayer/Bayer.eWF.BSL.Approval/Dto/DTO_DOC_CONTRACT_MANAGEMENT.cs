@@ -119,6 +119,23 @@ namespace Bayer.eWF.BSL.Approval.Dto
         /// </summary> 
         public string PRIVACY_INFORMATION { get; set; }
 
+        public string PIPA_PURPOSE { get; set; }
+        public string PIPA_EVENT { get; set; }
+        public string PIPA_CONTRACT { get; set; }
+        public string PIPA_PURPOSE_PI { get; set; }
+        public string PIPA_PURPOSE_PI_OTHER { get; set; }
+        public string PIPA_TARGET { get; set; }
+        public string PIPA_COLLECTION { get; set; }
+        public string PIPA_ARCHIVING { get; set; }
+        public string PIPA_ARCHIVING_OTHER { get; set; }
+        public string PIPA_PERMISSION { get; set; }
+        public string PIPA_VOLUMN { get; set; }
+        public string PIPA_RETENTION { get; set; }
+        public string PIPA_3RDPARTY { get; set; }
+        
+        public string PIPA_OVERSEA { get; set; }
+        
+
         /// <summary>
         /// 
         /// </summary> 
