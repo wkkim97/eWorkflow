@@ -374,10 +374,19 @@
                 try {
 
                     strUrl = "/eWorks/Common/AttachFileDownload.aspx?FILENAME=" + fileName + "&USERID=" + userId;
-                    frames["filedownframe"].location.href = strUrl;
+                    //alert(strUrl);
+                    //frames.filedownframe.location.href = strUrl;
+                    //console.log(window.frames["filedownframe"]);
+                    ////window.open(strUrl);
+                    //console.log(strUrl);
+                    //document.getElementById("filedownframe")[0].src = strUrl;
+                    location.href = strUrl;
+                   //window.frames["filedownframe"].location.href = strUrl;
                 }
                 catch (exception) {
-                    fn_OpenErrorMessage(exception.description);
+                    console.log(exception);
+                    alert(exception.description);
+                    //fn_OpenErrorMessage(exception.description);
                 }
             }
     </script>

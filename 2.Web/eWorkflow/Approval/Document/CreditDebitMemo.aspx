@@ -145,7 +145,9 @@
                             <telerik:RadButton ID="radRdoBuRI" runat="server" ButtonType="ToggleButton" ToggleType="Radio" GroupName="BU" Text="R" Value="R" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton ID="radRdoBuCC" runat="server" ButtonType="ToggleButton" ToggleType="Radio" GroupName="BU" Text="CC" Value="CC" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton ID="radRdoBuDC" runat="server" ButtonType="ToggleButton" ToggleType="Radio" GroupName="BU" Text="DC" Value="DC" AutoPostBack="false"></telerik:RadButton>
-                            <telerik:RadButton ID="radRdoBuAH" runat="server" ButtonType="ToggleButton" ToggleType="Radio" GroupName="BU" Text="AH" Value="AH" AutoPostBack="false"></telerik:RadButton>
+                            
+                            <telerik:RadButton ID="radRdoBuRMD" runat="server" ButtonType="ToggleButton" ToggleType="Radio" GroupName="BU" Text="RMD" Value="RMD" AutoPostBack="false"></telerik:RadButton>
+                            
                         </div>
                     </td>
                 </tr>

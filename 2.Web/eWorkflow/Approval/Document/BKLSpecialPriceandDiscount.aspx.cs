@@ -285,6 +285,7 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnSM, this.radGrdProduct);
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnWH, this.radGrdProduct);
         RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnCH, this.radGrdProduct);
+        RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnRMD, this.radGrdProduct);
 
         //RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnExceptionYes, this.radGrdProduct);
         //RadAjaxManager.GetCurrent(this).AjaxSettings.AddAjaxSetting(this.radBtnExceptionNo, this.radGrdProduct);

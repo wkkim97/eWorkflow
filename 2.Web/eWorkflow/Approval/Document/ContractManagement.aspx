@@ -99,7 +99,11 @@
                             <telerik:RadButton runat="server" ID="radRdoCategory3" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Clinical trial related (임상시험 관련)" Value="CTR" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton runat="server" ID="radRdoCategory5" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Alliance contract" Value="Alliance" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
                             <telerik:RadButton runat="server" ID="radRdoCategory9" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Data Privacy" Value="DP" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
+                            <!--INC0004937695-->
+                            <telerik:RadButton runat="server" ID="radRdoCategory10" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="IT Service" Value="IT_Service" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
+                            <!--INC0004937695-->
                             <telerik:RadButton runat="server" ID="radRdoCategory4" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Others (그 외)" Value="Others" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
+                            
                          </td>
                     </tr>
 

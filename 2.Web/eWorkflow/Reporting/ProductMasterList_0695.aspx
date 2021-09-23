@@ -169,7 +169,8 @@
                                         <telerik:DropDownListItem Text="SM" Value="SM" />
                                         <telerik:DropDownListItem Text="AH" Value="AH" />
                                         <telerik:DropDownListItem Text="R" Value="R" />
-                                        <telerik:DropDownListItem Text="DC" Value="DC" />
+                                        <telerik:DropDownListItem Text="RMD" Value="RMD" />
+                                        <!--<telerik:DropDownListItem Text="DC" Value="DC" />-->
                                         <telerik:DropDownListItem Text="ALL" Value="ALL"  />
                                     </Items>
                         </telerik:RadDropDownList>

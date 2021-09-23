@@ -544,6 +544,9 @@
                             <telerik:RadButton ID="radBtnCH" runat="server" Text="CH" Value="CH" GroupName="SalesGroup"
                                 ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSalesGroup_Click" OnClientClicked="fn_RadioVisible">
                             </telerik:RadButton>
+                            <telerik:RadButton ID="radBtnRMD" runat="server" Text="RMD" Value="RMD" GroupName="SalesGroup"
+                                ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSalesGroup_Click" OnClientClicked="fn_RadioVisible">
+                            </telerik:RadButton>
                             
                         </div>
                     </td>

@@ -42,7 +42,8 @@ function fn_OpenErrorMessage(n) {
         fn_SetCursor(!1);
         var t;
         t = n == null ? document.getElementById("errorMessage").value : n;
-        window.showModalDialog(fn_GetWebRoot() + "Manage/Message/ErrorMessage.aspx", t, "dialogWidth:" + DIALOGWIDTH + "px;dialogHeight:350px;status=no;scroll=no")
+        alert(t);
+        //window.showModalDialog(fn_GetWebRoot() + "Manage/Message/ErrorMessage.aspx", t, "dialogWidth:" + DIALOGWIDTH + "px;dialogHeight:350px;status=no;scroll=no")
     } catch (i) {
         alert(i.message)
     }
