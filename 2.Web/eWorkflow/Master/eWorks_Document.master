@@ -1,0 +1,294 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="eWorks_Document.master.cs" Inherits="Master_eWorks_Document" %>
+
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="~/Common/ApproveMenuBar.ascx" TagPrefix="uc1" TagName="ApproveMenuBar" %>
+<%@ Register Src="~/Common/DocumentBaseFooter.ascx" TagPrefix="uc1" TagName="DocumentBaseFooter" %>
+<%@ Register Src="~/Common/UserAutoCompleteBox.ascx" TagPrefix="uc1" TagName="UserAutoCompleteBox" %>
+<%@ Register Src="~/Common/FileUpload.ascx" TagPrefix="uc1" TagName="FileUpload" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bayer eWorks</title>
+    <link rel="shortcut icon" href="/eWorks/Styles/images/e_workflow_icon.ico"/>
+    <link href="/eWorks/Styles/css/style.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .commentStyle { white-space:normal !important;}
+        th, td { word-wrap:break-word; word-break:break-all; }
+    </style>
+    <script src="/eWorks/Scripts/jquery/jquery-1.11.1.min.js"></script>
+     
+    <script type="text/javascript">
+ 
+
+        function OnAutoCOmpleteClientLoad(sender) { 
+            $telerik.$(".racInput").attr("disabled", "disabled");
+        }
+
+        $(document).ready(function () {
+            try {
+                $("[id^=pre_users]").each(function (i) {
+
+                    if (_nameCtrl.PresenceEnabled) {
+                        _nameCtrl.OnStatusChange = onStatusChange;
+                        var userAddress = $(this).attr("value");
+                        var userId = $(this).attr("userid");
+
+                        //if (userAddress.startsWith('a'))
+                        //    userAddress = 'loki-park@dotnetsoft.co.kr';
+                        //else if (userAddress.startsWith('b'))
+                        //    userAddress = 'cypher@dotnetsoft.co.kr';
+                        //else if (userAddress.startsWith('w'))
+                        //    userAddress = 'jaewoos@dotnetsoft.co.kr';
+                        //else if (userAddress.startsWith('j'))
+                        //    userAddress = 'soo@dotnetsoft.co.kr';
+                        //else if (userAddress.startsWith('y'))
+                        //    userAddress = 'amsmus@dotnetsoft.co.kr';
+                        //else
+                        //    userAddress = 'zest1116@dotnetsoft.co.kr';
+                        var status = _nameCtrl.GetStatus(userAddress, userId);
+
+                        $telerik.$($(this)).prepend("<span class='lync_status' id='pre_" + userId + "' onmouseover=ShowOOUI('" + userAddress + "') onmouseout=HideOOUI( '" + userAddress + "') />")
+                        $(this).bind("mouseover", function () { ShowOOUI(userAddress); });
+                        $(this).bind("mouseout", function () { HideOOUI(userAddress); });
+
+                    }
+
+                });
+            }
+            catch (ex) { }
+        });
+
+
+        function fn_ClickedPanelFooter(sender, args) {
+            if (args.get_item().get_expanded())
+                $(args.get_item().get_element()).find("h3 div img").attr("src", "/eWorks/Styles/images/ico_up.png");
+            else
+                $(args.get_item().get_element()).find("h3 div img").attr("src", "/eWorks/Styles/images/ico_down.png");
+        }
+
+        function fn_cboCancel(sender, eventArgs) {
+            if (!eventArgs._item) {
+
+                eventArgs.set_cancel(true);
+
+            }
+        }
+        function CancelReturnKey() {
+            var focusedElement = document.activeElement;
+            if (focusedElement.tagName == 'TEXTAREA') {
+                if (window.event.keyCode == 13) {
+                    if (focusedElement.isMultiLine)
+                        return true;
+                    else return false;
+                }
+            } else {
+                if (window.event.keyCode == 13)
+                    return false;
+            }
+        }
+
+        function fn_ReUseClicked(formName, documentid, processid, reuse) {
+
+            fn_ShowDocument(formName, documentid, processid, reuse);
+            window.close();
+        }
+
+    </script>
+    <asp:ContentPlaceHolder ID="Scripthead" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body onload="fn_WindowOnLoad()" onkeypress="return CancelReturnKey();">
+    <form id="form1" runat="server">
+        <div id="wrap">
+            <div id="pop_wrap">
+                <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+                <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server">
+                </telerik:RadAjaxLoadingPanel>
+
+                <div class="DocumentContents">
+                    <uc1:ApproveMenuBar runat="server" ID="ApproveMenuBar" />
+
+                    <div id="doc_content">
+                        <div class="doc_style">
+                            <asp:ContentPlaceHolder ID="HolderDocumentBody" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div>
+                            <asp:Label ID="lblReviewerDesc" runat="server" Width="100%" CssClass="reviewer_desc"></asp:Label>
+                            <telerik:RadPanelBar runat="server" ID="panelFooter" EnableEmbeddedBaseStylesheet="false" EnableEmbeddedSkins="false"
+                                ExpandAnimation-Type="InBack" Width="100%" OnClientItemClicked="fn_ClickedPanelFooter">
+                                <Items>
+                                    <telerik:RadPanelItem Text="Append Reviewer" Value="AddReviewer" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <h3 class="blue" id="titReviewer">Action Taker<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div class="doc_style2">
+                                                <uc1:UserAutoCompleteBox runat="server" ID="UserAutoCompleteBox" />
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Attachment" Value="Attachment" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <h3 class="blue">Attachment<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div class="doc_style2 attachment-wrapper">
+                                                <uc1:FileUpload runat="server" ID="CtrlFileUpload" />
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="ApprovalLine" Value="ApprovalLine" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <h3 class="blue">ApprovalLine<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div>
+                                                <telerik:RadGrid ID="grdApprovalLIne" runat="server" AutoGenerateColumns="False" AllowPaging="false" AllowSorting="false" PageSize="50" AllowFilteringByColumn="false" GridLines="None" Skin="EXGrid">
+                                                    <MasterTableView ShowHeadersWhenNoRecords="true" ItemStyle-Wrap="false" TableLayout="Fixed">
+                                                        <Columns>
+                                                            <telerik:GridBoundColumn UniqueName="IDX" DataField="IDX" HeaderStyle-Width="3%" ItemStyle-Width="3%">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridTemplateColumn HeaderText="Name" HeaderStyle-Width="18%" ItemStyle-Width="18%">
+                                                                <ItemTemplate>
+                                                                    <span id="pre_users_<%#Eval("APPROVER_ID")%>" value="<%#Eval("MAIL_ADDRESS")%>" userid="<%#Eval("APPROVER_ID")%>">&nbsp;<%#Eval("APPROVER")%> 
+                                                                    </span>
+                                                                </ItemTemplate>
+                                                            </telerik:GridTemplateColumn>
+                                                            <telerik:GridBoundColumn HeaderText="Signed" UniqueName="APPROVAL_DATE" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" DataField="APPROVAL_DATE" HeaderStyle-Width="18%" ItemStyle-Width="18%">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridBoundColumn HeaderText="Comment" UniqueName="COMMENT" DataField="COMMENT" ItemStyle-CssClass="commentStyle">
+                                                            </telerik:GridBoundColumn>
+                                                        </Columns>
+                                                    </MasterTableView>
+                                                    <HeaderStyle HorizontalAlign="Left" />
+                                                    <ClientSettings>
+                                                    </ClientSettings>
+                                                </telerik:RadGrid>
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Recipient" Value="Recipient" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <!--<h3 class="blue">Recipient<div class="title_btn"> -->
+                                            <h3 class="blue">Action Taker<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div class="doc_style2">
+                                                <telerik:RadListView ID="viewRecipient" AllowMultiFieldSorting="false" AllowPaging="false" runat="server">
+                                                    <ItemTemplate>
+                                                        <span class="action-taker-wrapper" id="pre_users_<%#Eval("APPROVER_ID")%>" value="<%#Eval("MAIL_ADDRESS")%>" userid="<%#Eval("APPROVER_ID")%>"><%#Eval("APPROVER")%> </span>
+                                                    </ItemTemplate>
+                                                </telerik:RadListView>
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+                                    <telerik:RadPanelItem Text="Reviewer" Value="Reviewer" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <!--<h3 class="blue">Reviewer<div class="title_btn"> -->
+                                            <h3 class="blue">Informed<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div class="doc_style2">
+                                                <telerik:RadListView ID="viewReviewer" AllowMultiFieldSorting="false" AllowPaging="false" runat="server">
+                                                    <ItemTemplate>
+                                                        <span id="pre_users_<%#Eval("APPROVER_ID")%>" value="<%#Eval("MAIL_ADDRESS")%>" userid="<%#Eval("APPROVER_ID")%>"><%#Eval("APPROVER")%> </span>
+                                                    </ItemTemplate>
+                                                </telerik:RadListView>
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+
+                                    <telerik:RadPanelItem Text="Log" Value="Log" Expanded="true" runat="server">
+                                        <HeaderTemplate>
+                                            <h3 class="blue">Log<div class="title_btn">
+                                                <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
+                                                </div>
+                                            </h3>
+                                        </HeaderTemplate>
+                                        <ContentTemplate>
+                                            <div>
+                                                <telerik:RadGrid ID="grdDocLog" runat="server" AutoGenerateColumns="False" AllowPaging="false" AllowSorting="false" AllowFilteringByColumn="false" GridLines="None" PageSize="1000" Skin="EXGrid" OnItemDataBound="grdDocLog_ItemDataBound">
+                                                    <MasterTableView ShowHeadersWhenNoRecords="true">
+                                                        <Columns>
+                                                            <telerik:GridBoundColumn HeaderText="Name" UniqueName="REGISTER" DataField="REGISTER" HeaderStyle-Width="12%" ItemStyle-Width="12%">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridBoundColumn HeaderText="Type" UniqueName="LOG_TYPE" DataField="LOG_TYPE" HeaderStyle-Width="12%" ItemStyle-Width="12%">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridBoundColumn HeaderText="Comment" UniqueName="COMMENT" DataField="COMMENT">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridBoundColumn HeaderText="Create Date" UniqueName="CREATE_DATE"  DataFormatString="{0:yyyy-MM-dd HH:mm:ss}"  DataField="CREATE_DATE" HeaderStyle-Width="30%" ItemStyle-Width="30%">
+                                                            </telerik:GridBoundColumn>
+                                                            <telerik:GridTemplateColumn HeaderText="Attach" HeaderStyle-Width="8%" ItemStyle-Width="8%">
+                                                                <ItemTemplate>
+                                                                    <span onclick="fn_FileDownload(<%#Eval("FILE_IDX")%>)" style="cursor: pointer">
+                                                                        <asp:Image ID="iconAttach" runat="server" />
+                                                                    </span>
+                                                                </ItemTemplate>
+                                                            </telerik:GridTemplateColumn>
+                                                        </Columns>
+                                                    </MasterTableView>
+                                                    <ClientSettings>
+                                                    </ClientSettings>
+                                                    <HeaderStyle HorizontalAlign="Left" />
+                                                </telerik:RadGrid>
+                                            </div>
+                                        </ContentTemplate>
+                                    </telerik:RadPanelItem>
+                                </Items>
+                                <CollapseAnimation Duration="0" Type="None" />
+                                <ExpandAnimation Duration="0" Type="None" />
+                            </telerik:RadPanelBar>
+                        </div>
+                    </div>
+                </div>
+                <telerik:RadWindowManager ID="masterWinMgr" runat="server" EnableShadow="true" Skin="Metro">
+                    <Windows>
+                        <telerik:RadWindow ID="winCommand" runat="server" Modal="true"
+                            VisibleStatusbar="false" 
+                            VisibleTitlebar="true" Skin="Metro">
+                        </telerik:RadWindow>
+                    </Windows>
+                </telerik:RadWindowManager>
+                <input id="errorMessage" type="hidden" runat="server" />
+
+                <iframe id="filedownframe" width="0" height="0"></iframe>
+            </div>
+             <input type="hidden" id="hddXmlFiles" runat="server" value="" />
+            <input type="hidden" id="hddRejectedProcessId" runat="server" value="" />
+            <input type="hidden" id="hddRequester" runat="server" value="" />
+            <input type="hidden" id="hddRecipients" runat="server" value="" />
+            <input type="hidden" id="hddUserMailAddress" runat="server" value="" /> <%--Remind를 위해 로그인 사용자메일주소--%>
+        </div>
+        <script src="/eWorks/Scripts/Common.js"></script>
+        <script src="/eWorks/Scripts/ControlUtil.min.js"></script>
+        <script src="/eWorks/Scripts/FormEvent.js"></script>
+        <script src="/eWorks/Scripts/Common/InterFaseService.min.js"></script>
+
+        <script src="/eWorks/Scripts/Common/lyncStatus.js"></script>
+    </form>
+
+</body>
+
+</html>

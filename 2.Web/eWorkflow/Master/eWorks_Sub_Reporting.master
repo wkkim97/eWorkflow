@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="eWorks_Sub_Reporting.master.cs" Inherits="Master_eWorks_Sub_Reporting" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<%@ Register Src="/eWorks/Common/TopMenu.ascx" TagPrefix="uc1" TagName="TopMenu" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Bayer e-Workflow</title>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<meta name="description" content="Bayer, Bayer e-Workflow" />
+	<meta name="keywords" content="Bayer, Bayer e-Workflow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+ 
+    <link href="/eWorks/Styles/css/style.min.css" rel="stylesheet" /> 
+    <link href="/eWorks/Styles/css/bbs_style.css" rel="stylesheet" /> 
+    <script src="/eWorks/Scripts/jquery/jquery-1.11.1.min.js"></script>
+ 
+    <asp:ContentPlaceHolder ID="Scripthead" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body onload="fn_WindowOnLoad()" class="reporting-body">
+    <form id="form1" runat="server">
+    <div id="wrap">
+            <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+            <div>
+                <uc1:TopMenu runat="server" ID="TopMenu" />
+                <div id="content">
+                    <div class="">
+                        <div class="reporting">
+                            <ul id="ulMenubar" runat="server">
+                            </ul>
+                        </div>
+                        <div class="reporting_content">
+                            <asp:ContentPlaceHolder ID="HolderHead" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="HolderBody" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <asp:ContentPlaceHolder ID="HolderBottom" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+            <telerik:RadWindowManager ID="masterWinMgr" runat="server" EnableShadow="true" Skin="Metro">
+                <Windows>
+                    <telerik:RadWindow ID="RadWindowNewRequest" VisibleStatusbar="false" runat="server" ShowContentDuringLoad="false" Title="New Request" AutoSize="true" Skin="Metro" NavigateUrl="PopupNewRequest.aspx"></telerik:RadWindow>
+                    <telerik:RadWindow ID="winSettings" VisibleStatusbar="false" runat="server" ShowContentDuringLoad="false" Title="Configuration Settings" Width="700px" Height="570px" Skin="Metro" NavigateUrl="PopupNewRequest.aspx"></telerik:RadWindow>
+                </Windows>
+            </telerik:RadWindowManager>
+        </div>
+        <input type="hidden" id="hddUserId" runat="server" value="" />
+        <!-- 마우스오버시 미리보는 박스 -->
+        <div class="doc_over" style="display: none; z-index: 0;"></div>
+        <script src="/eWorks/Scripts/Common.js"></script>
+        <script src="/eWorks/Scripts/ControlUtil.min.js"></script>
+        <script src="/eWorks/Scripts/FormEvent.min.js"></script>
+    </form>
+</body>
+</html>
