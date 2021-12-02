@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style type="text/css">
+        .gnb_all2 {
+            width:100%;
+            height: 40px; 
+        }
+
+            .gnb_all2 ul li {
+                float: left;
+                position: relative;
+                text-align: center;
+            }
+
+                .gnb_all2 ul li:hover, .gnb_all2 ul li.hover a {
+                }
+
+                .gnb_all2 ul li a {
+                    position: relative;
+                    display: block;
+                    width: 40px;
+                    height: 20px;
+                }
+
+                    .gnb_all2 ul li a:hover, .gnb_all2 ul li a:focus, .gnb_all2 ul li a:active, .gnb_all2 ul li.hover {
+                        z-index: 100;
+                        text-decoration: none;
+                        color: #fff;
+                        background: #478414;
+                    }
+
+            .gnb_all2 ul ul {
+                position: absolute;
+                top: 20px;
+                left: -9999em;
+            }
+
+                .gnb_all2 ul ul li {
+                    float: left;
+                    position: static;
+                }
+
+                    .gnb_all2 ul ul li a {
+                        display: block;
+                        width: 72px;
+                        height: 20px;
+                    }
+
+            .gnb_all2 ul li:hover ul, .gnb_all2 ul li.hover ul {
+                left: 0;
+            }
+
+        li {
+            list-style: none;
+            margin-right: 5px;
+            float: left;
+        }
+
+            li a {
+                text-decoration: none;
+            }
+
+        ul li ul {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script src="../Scripts/jquery/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".gnb_all2").findMenu();
+        });
+
+        $.fn.findMenu = function () {
+            var el = $(this);
+
+            /* for IE 6 */
+            $("li", el).mouseover(function () {
+                $(this).addClass("hover");
+            }).mouseout(function () {
+                $(this).removeClass("hover");
+            });
+
+            /*  keyboard accessible */
+            $("a", el).focus(function () {
+                $(this).parents("li").addClass("hover");
+            }).blur(function () {
+                $(this).parents("li").removeClass("hover");
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="gnb_all2">
+        <ul>
+            <li>
+                <a href="#"><span>menu1</span></a>
+
+                <ul>
+                    <li>
+                        <a href="javascript:openStrNoPop(100000);">sub1</a>
+
+                    </li>
+                    <li>
+                        <a href="javascript:openStrNoPop(112233);">sub1</a>
+
+                    </li>
+                    <li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class=""><span>menu2</span></a>
+
+                <ul>
+                    <li>
+                        <a href="#">sub2</a>
+
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class=""><span>menu3</span></a>
+
+                <ul>
+                    <li>
+                        <a href="#">sub3</a>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

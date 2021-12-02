@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="eWorks_Popup2.master.cs" Inherits="Master_eWorks_Popup2 " %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title></title>
+    <link href="/eWorks/Styles/css/style.min.css" rel="stylesheet" /> 
+    <script src="/eWorks/Scripts/jquery/jquery-1.11.1.min.js"></script>
+    <asp:ContentPlaceHolder ID="Scripthead" runat="server">
+    </asp:ContentPlaceHolder> 
+</head>
+<body onload="fn_WindowOnLoad()">
+    <form id="form1" runat="server"> 
+        <telerik:RadScriptManager runat="server" ID="RadScriptManager1" />
+        <div id="wrap">
+            <asp:ContentPlaceHolder ID="HolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+            <telerik:RadWindowManager ID="masterWinMgr" runat="server" EnableShadow="true" Skin="Metro">
+            </telerik:RadWindowManager>
+        </div>
+        <script src="/eWorks/Scripts/Common.min.js"></script>
+        <script src="/eWorks/Scripts/ControlUtil.min.js"></script>
+        <script src="/eWorks/Scripts/FormEvent.min.js"></script>
+    </form>
+</body>
+</html>

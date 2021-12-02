@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Mailinfo>
+  <Items>
+    <Item MailSendType="CurrentApprover">
+      <Button>Request|Approval|ForwardApproval</Button>
+      <To>Approver</To>
+      <Subject><![CDATA[[E-workflow] Arrival an approval document(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[ 
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible.<br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/><br/>
+              {2}
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="FinalApproval">
+      <Button>Approval</Button>
+      <To>Requester|Recipient|Reviewer</To>
+      <Subject><![CDATA[[E-workflow] Your document is Approved(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              Your document was approved.<br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Reject">
+      <Button>Reject</Button>
+      <To>Requester</To>
+      <Subject><![CDATA[[E-workflow] Your document is rejected(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              Your document was rejected.<br/>
+              Comment : “{1}”<br/>
+              <br/>
+            <a href="{2}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Forward">
+      <Button>Forward</Button>
+      <To>Forwardedperson</To>
+      <Subject><![CDATA[[E-workflow] Arrival a forwarded document(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}“<br/>
+              <br/>
+              Please find enclosed a link to an forwarded e-workflow document.<br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Withdraw">
+      <Button>Withdraw</Button>
+      <To>Requester|Approver|Recipient|Reviewer</To>
+      <Subject><![CDATA[[E-workflow] The document was withdrawn(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear Sir or Madam<br/>
+              <br/>
+              This document was withdrawn.<br/>
+              Comment : “{0}”<br/>
+              <br/>
+               <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="Remind">
+      <Button>Remind</Button>
+      <To>CurrentApprover</To>
+      <Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible. <br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="DelayApproval">
+      <Button>Remind</Button>
+      <From>KR_Workflow@bayer.com</From>
+      <To>CurrentApprover</To>
+      <Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible. <br/>
+              <br/>
+              Requester : {2}<br/>
+              Document Name : {3}<br/>
+              Request Date : {4}<br/>
+              <a href="{1}&maillink=Y" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="FinalApprovalRecipient">
+      <Button>Approval</Button>
+      <To>Recipient/ Reviewer</To>
+      <Subject><![CDATA[[E-workflow]-Information : The document is approved (“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              The document was approved.  <br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="InputComment">
+      <Button>InputComment</Button>
+      <To>Requester|Recipient|Reviewer</To>
+      <Subject><![CDATA[[E-workflow] Please see a comment(“{0}”)]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear “{0}”<br/>
+              <br/>
+              This comment was added.<br/>
+              {1}
+              <br/><br/>
+              <a href="{2}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/> 
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="RequestToAgency">
+      <Button>RequestToAgency</Button>
+      <From>KR_Workflow@bayer.com</From>
+      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
+      <Cc>Requester</Cc>
+      <Bcc>sunhee.seo@bayer.com</Bcc>
+      <Subject><![CDATA[[E-workflow]Request quotation for airfare (Bayer)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html >
+          <head>
+          <script type="text/javascript" src="cid:jqueryid"></script>
+          <script type="text/javascript" src="cid:popupid"></script>
+            {0}
+          </head>
+          <body>
+              Dear Agency,<br/><br/>
+              Please give me the ticket information(s) as written below schedule<br/><br/>
+              <h4>Comment : {1}</h4>
+              <h3>Traveler Information</h3>    
+              {2}
+              <h3>Trip Information</h3>    
+              <table>
+                  <colgroup>
+                      <col style="width: 25%;" />
+                      <col />
+                  </colgroup>
+                  <tr>
+                      <th class="tbl_title">
+                          Purpose
+                      </th>
+                      <td class="tbl_content">{3}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Period
+                      </th>
+                      <td class="tbl_content">{4}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Detail Information
+                      </th>
+                      <td class="tbl_content">
+                          {5}
+                      </td>
+                  </tr>
+				  <tr>
+                      <th class="tbl_title">
+                          Contact Number
+                      </th>
+                      <td class="tbl_content">
+                          {7}
+                      </td>
+                  </tr>
+              </table>
+              <h3>Trip Route</h3>
+              {6}
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          </body>
+          </html>
+        ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="CompletedTravelManagement">
+      <Button>RequestToAgency</Button>
+      <From>KR_Workflow@bayer.com</From>
+      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
+      <Cc>Requester</Cc>
+      <Bcc>sunhee.seo@bayer.com</Bcc>
+      <Subject><![CDATA[[E-workflow]Request reservation for airfare (Bayer)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html >
+          <head>
+          <script type="text/javascript" src="cid:jqueryid"></script>
+          <script type="text/javascript" src="cid:popupid"></script>
+            {0}
+          </head>
+          <body>
+              Dear Agency,<br/><br/>
+              Please arrange my schedule based on the below final confirmed information,<br/><br/>              
+              <h3>Traveler Information</h3>    
+              {1}
+              <h3>Trip Information</h3>    
+              <table>
+                  <colgroup>
+                      <col style="width: 25%;" />
+                      <col />
+                  </colgroup>
+                  <tr>
+                      <th class="tbl_title">
+                          Purpose
+                      </th>
+                      <td class="tbl_content">{2}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Period
+                      </th>
+                      <td class="tbl_content">{3}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Detail Information
+                      </th>
+                      <td class="tbl_content">
+                          {4}
+                      </td>
+                  </tr>
+				  <tr>
+                      <th class="tbl_title">
+                          Contact Number
+                      </th>
+                      <td class="tbl_content">
+                          {7}
+                      </td>
+                  </tr>
+              </table>
+              <h3>Trip Route</h3>
+              {5}
+              <br/>
+              <h3>Quotation</h3>
+              {6}
+              <font color="Red">*중복 수수료 발생을 피하기 위해 해외출장 중에 현지에서 원화로 카드 결제하지 마시고 현지통화로 결제하기를 바랍니다. <br>
+              To avoid duplicate fees, please do not settle your credit card payments in KRW during overseas business trips, but pay in local currency.<br>
+              <br>
+			  [해외 출장 시 스마트폰 (iPhone/Blackberry) 로밍 요금 줄이는 팁]<br/>
+              [How to reduce roaming service fee of smartphone (iPhone/Blackberry) during overseas business trip]<br/></font>
+              - 기기에서 데이터 로밍 차단 설정한다 setup data roaming services off in the device<br/>
+              - 가급적 문자메시지를 활용한다use SMS if possible <br/>
+              - 이메일은 lap top 이용한다 use lap top for emailing<br/>
+              - 이메일을 꼭 사용해야할 경우엔 application 자동 update 를 미리 차단설정한다(In case of emailing, setup automatic update off)<br/>
+              - 이메일을 많이 사용할 경우라면 SK Telecom 의 T Roaming Data One Pass 를 출장 출발 전에 가입한다 In case of expectation of much use of emailing, application for T Roaming Data One Pass serviced by SK Telecom is recommended<br/>
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          </body>
+          </html>
+        ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="CancelTravelManagement">
+      <Button>RequestToAgency</Button>
+      <From>KR_Workflow@bayer.com</From>
+      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
+      <Cc>Requester</Cc>
+      <Bcc>sunhee.seo@bayer.com</Bcc>
+      <Subject><![CDATA[[E-workflow]Cancel my reservation for airfare (Bayer)]]></Subject>
+      <Body>
+        <![CDATA[
+          <html >
+          <head>
+          <script type="text/javascript" src="cid:jqueryid"></script>
+          <script type="text/javascript" src="cid:popupid"></script>
+            {0}
+          </head>
+          <body>
+              Dear Agency,<br/><br/>
+              Please cancel my reservation.<br/><br/>              
+              <h3>Traveler Information</h3>    
+              {1}
+              <h3>Trip Information</h3>    
+              <table>
+                  <colgroup>
+                      <col style="width: 25%;" />
+                      <col />
+                  </colgroup>
+                  <tr>
+                      <th class="tbl_title">
+                          Purpose
+                      </th>
+                      <td class="tbl_content">{2}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Period
+                      </th>
+                      <td class="tbl_content">{3}</td>
+                  </tr>
+                  <tr>
+                      <th class="tbl_title">
+                          Detail Information
+                      </th>
+                      <td class="tbl_content">
+                          {4}
+                      </td>
+                  </tr>
+				  <tr>
+                      <th class="tbl_title">
+                          Contact Number
+                      </th>
+                      <td class="tbl_content">
+                          {7}
+                      </td>
+                  </tr>
+              </table>
+              <h3>Trip Route</h3>
+              {5}
+              <br/>
+              <h3>Quotation</h3>
+              {6}              
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          </body>
+          </html>
+        ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="DebitAndCreditNode">
+      <Button>DebitAndCreditNode</Button>
+      <Sender>KR_Workflow@bayer.com</Sender>
+      <To>CurrentApprover</To>
+      <Subject><![CDATA[{0} Note from #{1} {2} ( {3} )]]></Subject>
+      <Body>
+        <![CDATA[
+              Dear Sir or Madam,
+              <br/>
+              Please be informed that your invoice ({0} Note) has been issued.
+              <br/>
+              To view your invoice please click on this <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">link</a>.<br/>
+              <br/>
+              In addition you can also refer to the attached supporting documents.
+              <br/>
+              Kind regards
+              <br/>
+              Bayer Korea AccP – Service Accounting team
+              <br/>
+              <br/>
+              ―――――――――――――――――――――――――――――――――――――
+              <br/>
+              <br/>
+              This is an automatically generated email, please do not reply.
+              <br/>
+              You may contact GDFPC to find further information regarding this invoice.
+              <br/>
+              <a href='mailto:kangil.lee@bayer.com'>kangil.lee@bayer.com</a>.
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+
+        ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="BusinessCard">
+      <Button>BusinessCard</Button>
+      <From>KR_Workflow@bayer.com</From>
+      <To>kinkos18@kinkos.co.kr</To>
+      <Cc>Requester</Cc>
+      <Bcc>Recipient</Bcc>
+      <Subject><![CDATA[[E-workflow]명함 신청 (Bayer)]]></Subject>
+      <Body>
+        <![CDATA[
+        <html >
+          <head>
+            {0}
+          </head>
+          <body>
+              <h3>The Information</h3>
+              {1}
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+          </body>
+          </html>
+
+        ]]>
+      </Body>
+    </Item>
+    <Item MailSendType="ReturnGoods">
+      <Button>ReturnGoods</Button>
+      <To>Approver</To>
+      <Subject><![CDATA[[E-workflow] Arrival an approval document(“Return Goods”)]]></Subject>
+      <Body>
+        <![CDATA[ 
+              Dear “{0}”<br/>
+              <br/>
+              Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible.<br/>
+              <br/>
+              <a href="{1}" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">Document Link</a><br/><br/>
+              <br/>
+              <br/>
+              If you have any technical problem, please do not hesitate to contact us <br/>
+              Mail address : itservicedesk@bayer.com <br/>
+              Telephone number : #6262, 080-300-6262 <br/>
+      ]]>
+      </Body>
+    </Item>
+  </Items>
+</Mailinfo>
