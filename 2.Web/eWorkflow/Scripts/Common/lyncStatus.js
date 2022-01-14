@@ -1,5 +1,5 @@
-﻿var _nameCtrl = new ActiveXObject('Name.nameCtrl.1');
- 
+﻿//var _nameCtrl = new ActiveXObject('Name.nameCtrl.1');
+var _nameCtrl = null;
 
 $(document).ready(function () {
 

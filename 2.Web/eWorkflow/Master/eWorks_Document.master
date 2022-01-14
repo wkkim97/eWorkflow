@@ -126,7 +126,7 @@
                                 <Items>
                                     <telerik:RadPanelItem Text="Append Reviewer" Value="AddReviewer" Expanded="true" runat="server">
                                         <HeaderTemplate>
-                                            <h3 class="blue" id="titReviewer">Action Taker<div class="title_btn">
+                                            <h3 class="blue" id="titReviewer">Informed<div class="title_btn">
                                                 <img src="/eWorks/Styles/images/ico_up.png" style="padding-top: 1px;" />
                                                 </div>
                                             </h3>

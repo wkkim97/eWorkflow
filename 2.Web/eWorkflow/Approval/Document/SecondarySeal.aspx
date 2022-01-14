@@ -102,6 +102,7 @@
                                         <telerik:DropDownListItem Text="BCS-Procurement" Value="BCS-Procurement" />  <%--  2020년에 새롭게 추가됨. --%>
                                         <telerik:DropDownListItem Text="BCS-Development-Pyeongtaek" Value="BCS-Development-Pyeongtaek" /> <%--  기존 DEV_P --%>
                                         <telerik:DropDownListItem Text="BCS-PS-Daejeon" Value="BCS-PS-Daejeon" /> <%--  기존 PS_DJ --%>
+                                        <telerik:DropDownListItem Text="BCS-Industrial Sales" Value="BCS-Industrial Sales" /> <%--  기존 PS_DJ --%>
 
                                         <telerik:DropDownListItem Text="BCS-JungBu Branch" Value="BCS-JungBu Branch" />   <%--  기존 JungBu --%>
                                         <telerik:DropDownListItem Text="BCS-ChungCheong Branch" Value="BCS-ChungCheong Branch" />   <%--  기존 ChungCheong --%>
@@ -110,16 +111,16 @@
                                         <telerik:DropDownListItem Text="BCS-KyungNam Branch" Value="BCS-KyungNam Branch" />     <%--  기존 KyungNam --%>
                                         <telerik:DropDownListItem Text="BCS-Jeju Branch" Value="BCS-Jeju Branch" />     <%--  2020년에 새롭게 추가됨--%>
 
-                                        <telerik:DropDownListItem Text="BCS-CFO Functions" Value="BCS-CFO Functions" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-CFO" Value="BCS-CFO" /> <%--  NEW --%>
                                         <telerik:DropDownListItem Text="BCS-O2C/WSO/CM" Value="BCS-O2C/WSO/CM" /> <%--  NEW --%>
-                                        <telerik:DropDownListItem Text="BCS-ACCP" Value="BCS-ACCP" /> <%--  NEW --%>
-                                        <telerik:DropDownListItem Text="BCS-PRO" Value="BCS-PRO" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-GFI" Value="BCS-GFI" /> <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BCS-CPL-CFO-CA" Value="BCS-CPL-CFO-CA" /> <%--  NEW --%>
 
 
-                                        <telerik:DropDownListItem Text="BKL-CFO Functions" Value="BKL-CFO Functions" />  <%--  기존 CFO --%>
+                                        <telerik:DropDownListItem Text="BKL-CFO" Value="BKL-CFO" />  <%--  기존 CFO --%>
                                         <telerik:DropDownListItem Text="BKL-CPL-CFO-O2C/WSO/CM" Value="BKL-CPL-CFO-O2C/WSO/CM" />  <%--  NEW --%>
-                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-ACCP" Value="BKL-CPL-CFO-ACCP" />  <%--  NEW --%>
-                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-PRO" Value="BKL-CPL-CFO-PRO" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-GFI" Value="BKL-CPL-CFO-GFI" />  <%--  NEW --%>
+                                        <telerik:DropDownListItem Text="BKL-CPL-CFO-CA" Value="BKL-CPL-CFO-CA" />  <%--  NEW --%>
                                         <telerik:DropDownListItem Text="BKL-CPL-CFO-QO" Value="BKL-CPL-CFO-QO" />    <%-- BKL-Production(Ansung) 에서 이름변경--%>
                                         <telerik:DropDownListItem Text="BKL-Human Resources" Value="BKL-Human Resources" />     <%--  기존 BKL-HR --%>
                                         <telerik:DropDownListItem Text="BKL-Law Patent & Compliance" Value="BKL-Law Patent & Compliance" /> <%-- 2020년에 새롭게 추가됨. --%>
@@ -137,7 +138,7 @@
                                         <telerik:DropDownListItem Text="BKL-Radiology" Value="BKL-Radiology" />
                                         <telerik:DropDownListItem Text="BKL-Consumer Health" Value="BKL-Consumer Health" />
 
-                                        <telerik:DropDownListItem Text="MKR-Finance" Value="MKR-Finance" />
+                                        <telerik:DropDownListItem Text="MKR-GFI" Value="MKR-GFI" />
                                         <telerik:DropDownListItem Text="MKR-R&D" Value="MKR-R&D" />
                                         <telerik:DropDownListItem Text="MKR-Seed&Trait Regulatory Science" Value="MKR-Seed&Trait Regulatory Science" />
                                         <telerik:DropDownListItem Text="MKR-HR" Value="MKR-HR" />

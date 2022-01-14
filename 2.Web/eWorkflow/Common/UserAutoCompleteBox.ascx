@@ -2,7 +2,18 @@
 <%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
 <script type="text/javascript">
     
-    var _nameCtrl = new ActiveXObject('Name.nameCtrl.1');
+    var _nameCtrl = null;
+
+
+    try {
+        if (window.ActiveXObject) {
+            _nameCtrl = new ActiveXObject("Name.NameCtrl");
+
+        } else {
+            _nameCtrl = CreateNPApiOnWindowsPlugin("application/x-sharepoint-uc");
+        }
+    }
+    catch (ex) { }
 
     function onStatusChange(name, status, id) {
         //alert(name + ", " + status + ", " + id);
@@ -66,44 +77,54 @@
         var entry = args.get_entry();
         if (entry.get_value()) {
             var user = JSON.parse(entry.get_value());
-            if (_nameCtrl.PresenceEnabled) {
-                var token = args.get_entry().get_token();
-                _nameCtrl.OnStatusChange = onStatusChange;
-                var userAddress = user.MAIL_ADDRESS;
-                var userId = user.USER_ID;
-                if (token.addEventListener) {
-                    //token.addEventListener("click", setCheckedValues, false);
-                    token.addEventListener('mouseover', function (e) { 
-                        _nameCtrl.ShowOOUI(userAddress, 0, e.clientX - 10, e.clientY - 10);
-                    });
-                    token.addEventListener('mouseout', function () { _nameCtrl.HideOOUI(); })
-                }
-                else {
-                    token.attachEvent("onmouseover", function (e) { _nameCtrl.ShowOOUI(userAddress, 0, e.clientX - 10, e.clientY - 10); });
-                    token.attachEvent("onmouseout", function () { _nameCtrl.HideOOUI(); });
-                }
+            
+            
+            var token = args.get_entry().get_token();
+            //CHROME 에서는 "ActiveXObject" 사용이 안되어서 if 로 처리.
+            if (_nameCtrl) {
+                
+                if (_nameCtrl.PresenceEnabled) {
+                    
+                    _nameCtrl.OnStatusChange = onStatusChange;
+                    var userAddress = user.MAIL_ADDRESS;
+                    var userId = user.USER_ID;
+                    if (token.addEventListener) {
+                        //token.addEventListener("click", setCheckedValues, false);
+                        token.addEventListener('mouseover', function (e) {
+                            _nameCtrl.ShowOOUI(userAddress, 0, e.clientX - 10, e.clientY - 10);
+                        });
+                        token.addEventListener('mouseout', function () { _nameCtrl.HideOOUI(); })
+                    }
+                    else {
+                        token.attachEvent("onmouseover", function (e) { _nameCtrl.ShowOOUI(userAddress, 0, e.clientX - 10, e.clientY - 10); });
+                        token.attachEvent("onmouseout", function () { _nameCtrl.HideOOUI(); });
+                    }
 
-                //token.addEventListener('mouseover', function () { _nameCtrl.ShowOOUI(userAddress, 0, 15, 15); });
-                //token.addEventListener('mouseout', function () { _nameCtrl.HideOOUI(); })
-                //if (userAddress.startsWith('a'))
-                //    userAddress = 'loki-park@dotnetsoft.co.kr';
-                //else if (userAddress.startsWith('b'))
-                //    userAddress = 'cypher@dotnetsoft.co.kr';
-                //else if (userAddress.startsWith('w'))
-                //    userAddress = 'jaewoos@dotnetsoft.co.kr';
-                //else if (userAddress.startsWith('j'))
-                //    userAddress = 'soo@dotnetsoft.co.kr';
-                //else if (userAddress.startsWith('y'))
-                //    userAddress = 'amsmus@dotnetsoft.co.kr';
-                //else
-                //    userAddress = 'zest1116@dotnetsoft.co.kr';
-                var status = _nameCtrl.GetStatus(userAddress, userId);
-                $telerik.$(args.get_entry().get_token()).prepend("<span class='lync_status' id='pre_" + userId + "' onmouseover=ShowOOUI('" + userAddress + "') onmouseout=HideOOUI('" + userAddress + "') />")
+                    //token.addEventListener('mouseover', function () { _nameCtrl.ShowOOUI(userAddress, 0, 15, 15); });
+                    //token.addEventListener('mouseout', function () { _nameCtrl.HideOOUI(); })
+                    //if (userAddress.startsWith('a'))
+                    //    userAddress = 'loki-park@dotnetsoft.co.kr';
+                    //else if (userAddress.startsWith('b'))
+                    //    userAddress = 'cypher@dotnetsoft.co.kr';
+                    //else if (userAddress.startsWith('w'))
+                    //    userAddress = 'jaewoos@dotnetsoft.co.kr';
+                    //else if (userAddress.startsWith('j'))
+                    //    userAddress = 'soo@dotnetsoft.co.kr';
+                    //else if (userAddress.startsWith('y'))
+                    //    userAddress = 'amsmus@dotnetsoft.co.kr';
+                    //else
+                    //    userAddress = 'zest1116@dotnetsoft.co.kr';
+                    var status = _nameCtrl.GetStatus(userAddress, userId);
+                    $telerik.$(args.get_entry().get_token()).prepend("<span class='lync_status' id='pre_" + userId + "' onmouseover=ShowOOUI('" + userAddress + "') onmouseout=HideOOUI('" + userAddress + "') />")
+                }
+            } else {
+                $telerik.$(args.get_entry().get_token());
             }
         }
     }
     function fn_GetEntries()
     {
+        console.log("fn_getEntries)");
         var autoObj = $find("<%= autoCompleteUserBox.ClientID %>");
      
         for (var i = 0; i < autoObj.get_entries()._array.length; i++) {
