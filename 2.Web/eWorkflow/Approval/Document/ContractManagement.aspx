@@ -102,6 +102,10 @@
                             <!--INC0004937695-->
                             <telerik:RadButton runat="server" ID="radRdoCategory10" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="IT Service" Value="IT_Service" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
                             <!--INC0004937695-->
+
+                            <!--INC14259026-->
+                            <telerik:RadButton runat="server" ID="radRdoCategory11" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Dispatch&Sub-contracting(하도급 관련)" Value="Dispatch" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
+                            <!--INC14259026-->
                             <telerik:RadButton runat="server" ID="radRdoCategory4" CssClass="radio" ButtonType="ToggleButton" ToggleType="Radio" Text="Others (그 외)" Value="Others" GroupName="ContractCategory" AutoPostBack="false"></telerik:RadButton>
                             
                          </td>

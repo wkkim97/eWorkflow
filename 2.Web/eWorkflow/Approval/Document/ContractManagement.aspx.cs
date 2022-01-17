@@ -130,6 +130,9 @@ public partial class Approval_Document_ContractManagement : DNSoft.eWF.FrameWork
                 //INC0004937695
                 else if (doc.CONTRACT_CATEGORY == radRdoCategory10.Value)
                     this.radRdoCategory10.Checked = true;
+                //INC14259026
+                else if (doc.CONTRACT_CATEGORY == radRdoCategory11.Value)
+                    this.radRdoCategory11.Checked = true;
 
                 if (doc.PRIVACY_INFORMATION == "Y" || doc.PRIVACY_INFORMATION == "N" )
                 {
@@ -314,7 +317,7 @@ public partial class Approval_Document_ContractManagement : DNSoft.eWF.FrameWork
             if (!radRdoPIPA.Checked)
             {
                 //radRdoCategory10
-                if (!(radRdoCategory1.Checked || radRdoCategory2.Checked || radRdoCategory3.Checked || radRdoCategory4.Checked || radRdoCategory5.Checked || radRdoCategory6.Checked || radRdoCategory7.Checked || radRdoCategory8.Checked || radRdoCategory9.Checked || radRdoCategory10.Checked))
+                if (!(radRdoCategory1.Checked || radRdoCategory2.Checked || radRdoCategory3.Checked || radRdoCategory4.Checked || radRdoCategory5.Checked || radRdoCategory6.Checked || radRdoCategory7.Checked || radRdoCategory8.Checked || radRdoCategory9.Checked || radRdoCategory10.Checked || radRdoCategory11.Checked))
                     message += message.IsNullOrEmptyEx() ? "Contract Category" : ", Contrac Category";
                 //if (!(radRdoPrivacyInformationYes.Checked || radRdoPrivacyInformationNo.Checked))
                 //    message += message.IsNullOrEmptyEx() ? "Contracts related privacy information" : ", Contracts related privacy informationn";
@@ -365,6 +368,8 @@ public partial class Approval_Document_ContractManagement : DNSoft.eWF.FrameWork
         else if (this.radRdoCategory9.Checked) category = this.radRdoCategory9.Text;
         //INC0004937695 
         else if (this.radRdoCategory10.Checked) category = this.radRdoCategory10.Text;
+        //INC14259026
+        else if (this.radRdoCategory11.Checked) category = this.radRdoCategory11.Text;
 
         return category;
     }
@@ -447,6 +452,9 @@ public partial class Approval_Document_ContractManagement : DNSoft.eWF.FrameWork
         //INC0004937695 
         else if (this.radRdoCategory10.Checked)
             doc.CONTRACT_CATEGORY = radRdoCategory10.Value;
+        //INC14259026 
+        else if (this.radRdoCategory11.Checked)
+            doc.CONTRACT_CATEGORY = radRdoCategory11.Value;
 
 
 
