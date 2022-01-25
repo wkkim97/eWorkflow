@@ -602,7 +602,7 @@
                             </telerik:GridTemplateColumn>
 
                             
-                            <telerik:GridTemplateColumn DataField="VOLUME_RB" HeaderText="Volume R/B" UniqueName="VOLUME_RB" HeaderStyle-Width="80px" >
+                            <telerik:GridTemplateColumn DataField="VOLUME_RB" HeaderText="Volume R/B" UniqueName="VOLUME_RB" HeaderStyle-Width="80px"  >
                                 <ItemStyle HorizontalAlign="Right" />
                                 <ItemTemplate>
                                     <asp:Label ID="Label21" runat="server" Text='<%# String.Format("{0:#,##0}", Eval("VOLUME_RB")) %>'></asp:Label>

@@ -236,7 +236,8 @@ public partial class Approval_Document_CsSubSidy : DNSoft.eWF.FrameWork.Web.WebB
             foreach (GridColumn column in radGrdSampleItemList.Columns)
             {
                 if (column.UniqueName == "VOLUME_RB")
-                    (column as GridTemplateColumn).Display = true;
+                    //(column as GridTemplateColumn).Display = true; //INC14376209
+                    (column as GridTemplateColumn).Display = false;
                 //if (column.UniqueName == "BASIC_RB")
                 //    (column as GridTemplateColumn).Display = true;
                 if (column.UniqueName == "VS_INV")

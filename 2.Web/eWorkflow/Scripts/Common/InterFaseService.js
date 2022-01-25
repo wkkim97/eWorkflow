@@ -1,4 +1,5 @@
 ﻿// 결재 버튼 Event 후처리( 메일 발송)
+
 function fn_sendMail(processid, sendmailtype, senderAddress) {
 
     var result;
@@ -8,9 +9,14 @@ function fn_sendMail(processid, sendmailtype, senderAddress) {
         
         async:false,
         success: function (data) {
+            console.log(data);
             result = data;
         },
-        error: function (jqXHR, textStatus, errorThrown) { result = jqXHR; }
+        error: function (jqXHR, textStatus, errorThrown) {
+            //console.log(jqXHR);
+            //alert("메일이 발송되지 않았습니다)" + jqXHR);
+            result = jqXHR;
+        }
 
     });
     return result;

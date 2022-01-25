@@ -288,7 +288,7 @@ namespace Bayer.WCF.Service
                     //
                     // 메일 발송 테스트 계정 추후 제거 시작
                     //mail.To.Add(approver.MAIL_ADDRESS);
-                    mail.To.Add("wookyung.kim@bayer.com,youngwoo.lee@bayer.com, cheng.yin.ext@bayer.com");
+                    mail.To.Add("wookyung.kim@bayer.com,cheng.yin.ext@bayer.com");
                     //mail.To.Add("zest1116@dotnetsoft.co.kr");
                     //DearName = DearName + "(" + approver.MAIL_ADDRESS + ")";
                     // 메일 발송 테스트 계정 추후 제거 끝
