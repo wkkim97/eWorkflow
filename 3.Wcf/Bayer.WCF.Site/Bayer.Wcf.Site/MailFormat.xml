@@ -1,12 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
+<!--INC14436682, 2022.01.27 modified by Qiang, 'Telephone number :' from old:#6262, 080-300-6262 to new:#6262, 02-6410-8650-->
 <Mailinfo>
-  <Items>
-    <Item MailSendType="CurrentApprover">
-      <Button>Request|Approval|ForwardApproval</Button>
-      <To>Approver</To>
-      <Subject><![CDATA[[E-workflow] Arrival an approval document(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[ 
+	<Items>
+		<Item MailSendType="CurrentApprover">
+			<Button>Request|Approval|ForwardApproval</Button>
+			<To>Approver</To>
+			<Subject><![CDATA[[E-workflow] Arrival an approval document(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[ 
               Dear “{0}”<br/>
               <br/>
               Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible.<br/>
@@ -17,17 +18,17 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
 
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="FinalApproval">
-      <Button>Approval</Button>
-      <To>Requester|Recipient|Reviewer</To>
-      <Subject><![CDATA[[E-workflow] Your document is Approved(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="FinalApproval">
+			<Button>Approval</Button>
+			<To>Requester|Recipient|Reviewer</To>
+			<Subject><![CDATA[[E-workflow] Your document is Approved(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               Your document was approved.<br/>
@@ -37,16 +38,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="Reject">
-      <Button>Reject</Button>
-      <To>Requester</To>
-      <Subject><![CDATA[[E-workflow] Your document is rejected(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="Reject">
+			<Button>Reject</Button>
+			<To>Requester</To>
+			<Subject><![CDATA[[E-workflow] Your document is rejected(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               Your document was rejected.<br/>
@@ -57,16 +58,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="Forward">
-      <Button>Forward</Button>
-      <To>Forwardedperson</To>
-      <Subject><![CDATA[[E-workflow] Arrival a forwarded document(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="Forward">
+			<Button>Forward</Button>
+			<To>Forwardedperson</To>
+			<Subject><![CDATA[[E-workflow] Arrival a forwarded document(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}“<br/>
               <br/>
               Please find enclosed a link to an forwarded e-workflow document.<br/>
@@ -76,16 +77,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="Withdraw">
-      <Button>Withdraw</Button>
-      <To>Requester|Approver|Recipient|Reviewer</To>
-      <Subject><![CDATA[[E-workflow] The document was withdrawn(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="Withdraw">
+			<Button>Withdraw</Button>
+			<To>Requester|Approver|Recipient|Reviewer</To>
+			<Subject><![CDATA[[E-workflow] The document was withdrawn(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear Sir or Madam<br/>
               <br/>
               This document was withdrawn.<br/>
@@ -96,16 +97,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="Remind">
-      <Button>Remind</Button>
-      <To>CurrentApprover</To>
-      <Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="Remind">
+			<Button>Remind</Button>
+			<To>CurrentApprover</To>
+			<Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible. <br/>
@@ -115,17 +116,17 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="DelayApproval">
-      <Button>Remind</Button>
-      <From>KR_Workflow@bayer.com</From>
-      <To>CurrentApprover</To>
-      <Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="DelayApproval">
+			<Button>Remind</Button>
+			<From>KR_Workflow@bayer.com</From>
+			<To>CurrentApprover</To>
+			<Subject><![CDATA[[E-workflow] Waiting for your action (“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible. <br/>
@@ -138,16 +139,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="FinalApprovalRecipient">
-      <Button>Approval</Button>
-      <To>Recipient/ Reviewer</To>
-      <Subject><![CDATA[[E-workflow]-Information : The document is approved (“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="FinalApprovalRecipient">
+			<Button>Approval</Button>
+			<To>Recipient/ Reviewer</To>
+			<Subject><![CDATA[[E-workflow]-Information : The document is approved (“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               The document was approved.  <br/>
@@ -157,16 +158,16 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="InputComment">
-      <Button>InputComment</Button>
-      <To>Requester|Recipient|Reviewer</To>
-      <Subject><![CDATA[[E-workflow] Please see a comment(“{0}”)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="InputComment">
+			<Button>InputComment</Button>
+			<To>Requester|Recipient|Reviewer</To>
+			<Subject><![CDATA[[E-workflow] Please see a comment(“{0}”)]]></Subject>
+			<Body>
+				<![CDATA[
               Dear “{0}”<br/>
               <br/>
               This comment was added.<br/>
@@ -177,19 +178,19 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="RequestToAgency">
-      <Button>RequestToAgency</Button>
-      <From>KR_Workflow@bayer.com</From>
-      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
-      <Cc>Requester</Cc>
-      <Bcc>sunhee.seo@bayer.com</Bcc>
-      <Subject><![CDATA[[E-workflow]Request quotation for airfare (Bayer)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="RequestToAgency">
+			<Button>RequestToAgency</Button>
+			<From>KR_Workflow@bayer.com</From>
+			<To>bcd.bayer.kr@bcdtravel.co.kr</To>
+			<Cc>Requester</Cc>
+			<Bcc>sunhee.seo@bayer.com,hannah.li@bayer.com</Bcc>
+			<Subject><![CDATA[[E-workflow]Request quotation for airfare (Bayer)]]></Subject>
+			<Body>
+				<![CDATA[
           <html >
           <head>
           <script type="text/javascript" src="cid:jqueryid"></script>
@@ -243,21 +244,21 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
         ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="CompletedTravelManagement">
-      <Button>RequestToAgency</Button>
-      <From>KR_Workflow@bayer.com</From>
-      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
-      <Cc>Requester</Cc>
-      <Bcc>sunhee.seo@bayer.com</Bcc>
-      <Subject><![CDATA[[E-workflow]Request reservation for airfare (Bayer)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="CompletedTravelManagement">
+			<Button>RequestToAgency</Button>
+			<From>KR_Workflow@bayer.com</From>
+			<To>bcd.bayer.kr@bcdtravel.co.kr</To>
+			<Cc>Requester</Cc>
+			<Bcc>sunhee.seo@bayer.com,hannah.li@bayer.com</Bcc>
+			<Subject><![CDATA[[E-workflow]Request reservation for airfare (Bayer)]]></Subject>
+			<Body>
+				<![CDATA[
           <html >
           <head>
           <script type="text/javascript" src="cid:jqueryid"></script>
@@ -323,21 +324,21 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
         ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="CancelTravelManagement">
-      <Button>RequestToAgency</Button>
-      <From>KR_Workflow@bayer.com</From>
-      <To>bcd.bayer.kr@bcdtravel.co.kr</To>
-      <Cc>Requester</Cc>
-      <Bcc>sunhee.seo@bayer.com</Bcc>
-      <Subject><![CDATA[[E-workflow]Cancel my reservation for airfare (Bayer)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="CancelTravelManagement">
+			<Button>RequestToAgency</Button>
+			<From>KR_Workflow@bayer.com</From>
+			<To>bcd.bayer.kr@bcdtravel.co.kr</To>
+			<Cc>Requester</Cc>
+			<Bcc>sunhee.seo@bayer.com,hannah.li@bayer.com</Bcc>
+			<Subject><![CDATA[[E-workflow]Cancel my reservation for airfare (Bayer)]]></Subject>
+			<Body>
+				<![CDATA[
           <html >
           <head>
           <script type="text/javascript" src="cid:jqueryid"></script>
@@ -393,19 +394,19 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
         ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="DebitAndCreditNode">
-      <Button>DebitAndCreditNode</Button>
-      <Sender>KR_Workflow@bayer.com</Sender>
-      <To>CurrentApprover</To>
-      <Subject><![CDATA[{0} Note from #{1} {2} ( {3} )]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="DebitAndCreditNode">
+			<Button>DebitAndCreditNode</Button>
+			<Sender>KR_Workflow@bayer.com</Sender>
+			<To>CurrentApprover</To>
+			<Subject><![CDATA[{0} Note from #{1} {2} ( {3} )]]></Subject>
+			<Body>
+				<![CDATA[
               Dear Sir or Madam,
               <br/>
               Please be informed that your invoice ({0} Note) has been issued.
@@ -431,20 +432,20 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
 
         ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="BusinessCard">
-      <Button>BusinessCard</Button>
-      <From>KR_Workflow@bayer.com</From>
-      <To>kinkos18@kinkos.co.kr</To>
-      <Cc>Requester</Cc>
-      <Bcc>Recipient</Bcc>
-      <Subject><![CDATA[[E-workflow]명함 신청 (Bayer)]]></Subject>
-      <Body>
-        <![CDATA[
+			</Body>
+		</Item>
+		<Item MailSendType="BusinessCard">
+			<Button>BusinessCard</Button>
+			<From>KR_Workflow@bayer.com</From>
+			<To>kinkos18@kinkos.co.kr</To>
+			<Cc>Requester</Cc>
+			<Bcc>Recipient</Bcc>
+			<Subject><![CDATA[[E-workflow]명함 신청 (Bayer)]]></Subject>
+			<Body>
+				<![CDATA[
         <html >
           <head>
             {0}
@@ -456,19 +457,19 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
 
         ]]>
-      </Body>
-    </Item>
-    <Item MailSendType="ReturnGoods">
-      <Button>ReturnGoods</Button>
-      <To>Approver</To>
-      <Subject><![CDATA[[E-workflow] Arrival an approval document(“Return Goods”)]]></Subject>
-      <Body>
-        <![CDATA[ 
+			</Body>
+		</Item>
+		<Item MailSendType="ReturnGoods">
+			<Button>ReturnGoods</Button>
+			<To>Approver</To>
+			<Subject><![CDATA[[E-workflow] Arrival an approval document(“Return Goods”)]]></Subject>
+			<Body>
+				<![CDATA[ 
               Dear “{0}”<br/>
               <br/>
               Please find enclosed a link to an e-workflow document, and be so kind to verify (Approval or Reject) it as quickly as possible.<br/>
@@ -478,9 +479,9 @@
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
               Mail address : itservicedesk@bayer.com <br/>
-              Telephone number : #6262, 080-300-6262 <br/>
+              Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
-      </Body>
-    </Item>
-  </Items>
+			</Body>
+		</Item>
+	</Items>
 </Mailinfo>
