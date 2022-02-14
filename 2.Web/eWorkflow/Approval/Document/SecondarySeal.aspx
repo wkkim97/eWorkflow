@@ -182,6 +182,23 @@
                 </tbody>
              </table>
           </div>
+<%--2022.01.29, add for change request, start--%>
+<%--	문서에 개인정보가 포함될 경우, 개인정보활용동의서를 득한 후 진행하여야 합니다. 특히 주민등록번호가 모두 노출되는 경우, 반드시 법에 의해 요구되는 내용인지 확인하시기 바라며, 기입이 필요한 경우 기안서(날인전/날인후)에는 주민등록번호 뒷자리는 삭제하여 첨부하시기 바랍니다.
+	인감날인이 완료된 문서는 반드시 “input comment”를 통해 사후 업로드를 완료 하시기 바랍니다.--%>
+    <p class=MsoListParagraph style='margin-left:38.0pt;mso-para-margin-left:0gd;
+    text-indent:-.14in;mso-list:l0 level1 lfo2'><![if !supportLists]><span    style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+    Wingdings;color:#C00000;mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>l<span
+    style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]>
+    <b><span lang=KO style='color:#C00000'>문서에 개인정보가 포함될 경우, 개인정보활용동의서를 득한 후 진행하여야 합니다. 특히 주민등록번호가 모두 노출되어 있는 경우에는 반드시 주민등록번호 뒷자리를 삭제하여 첨부하시기 바랍니다.</span></b></br>
+    </p>
+    
+    <p class=MsoListParagraph style='margin-left:38.0pt;mso-para-margin-left:0gd;
+    text-indent:-.14in;mso-list:l0 level1 lfo2'><![if !supportLists]><span
+    style='font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+    Wingdings;color:#C00000;mso-bidi-font-weight:bold'><span style='mso-list:Ignore'>l<span
+    style='font:7.0pt "Times New Roman"'>&nbsp; </span></span></span><![endif]><b><span
+    lang=KO style='color:#C00000'>인감날인이 완료된 문서는 반드시 “input comment”를 통해 사후 업로드를 완료 하시기 바랍니다.</span></b></p>
+<%--2022.01.29, add for change, end--%>
     </div>
     <input type="hidden" id="hddProcessID" runat="server" />
     <input type="hidden" id="hddProcessStatus" runat="server" />

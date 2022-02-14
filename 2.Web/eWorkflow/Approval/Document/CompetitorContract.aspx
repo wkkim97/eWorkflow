@@ -276,6 +276,10 @@
                 </tr>
             </table>
         </div>
+<%--        2022.01.29, change request, start, --%>
+        <%--*회의록(meeting minutes)은 회의 후, 반드시 input comment를 통하여 보고 완료(문서 업로드 혹은, 별도 문서가 없을 시 간단한 회의내용을 코멘트로 입력)해 주시기 바랍니다.--%>
+        <span class="text_red" style="font-weight:bold">*회의록(meeting minutes)은 회의 후, 반드시 input comment를 통하여 보고 완료(문서 업로드 혹은, 별도 문서가 없을 시 간단한 회의내용을 코멘트로 입력)해 주시기 바랍니다.</span>
+<%--        2022.01.29, change request, end, --%>
     </div>
     <input type="hidden" id="hddProcessID" runat="server" />
     <input type="hidden" id="hddProcessStatus" runat="server" />
