@@ -269,8 +269,12 @@ public partial class Approval_Document_BusinessCard : DNSoft.eWF.FrameWork.Web.W
             if (radtxtEnOrg.Text.Length <= 0 || radtxtKoOrg.Text.Length <= 0)
                 message += message.IsNullOrEmptyEx() ? "Division" : ",Division";
 
-            if (radTxtTelNum.Text.Length <= 0)
-                message += message.IsNullOrEmptyEx() ? "Tel.of office" : ",Tel.of office";
+            //<% --2022.04.15 comment out below line, INC15142408-- %> comment out, start
+ 
+            //if (radTxtTelNum.Text.Length <= 0)
+            //    message += message.IsNullOrEmptyEx() ? "Tel.of office" : ",Tel.of office";
+
+            //<% --2022.04.15 comment out below line, INC15142408-- %> comment out, end
 
             //if (radTxtMobileNum.Text.Length <= 0)
             //    message += message.IsNullOrEmptyEx() ? "Mobile phone" : ",Mobile phone";

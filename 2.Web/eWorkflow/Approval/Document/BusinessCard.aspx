@@ -170,7 +170,10 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Tel.of office <span class="text_red">*</span></th>
+                        <%--2022.04.15 comment out below line, INC15142408--%>
+<%--                        <th>Tel.of office <span class="text_red">*</span></th>--%>
+                        <%--2022.04.15 add below line, INC15142408--%>
+                        <th>Tel.of office <span class="text_red"></span></th>
                         <td colspan="2">
                             <telerik:RadDropDownList ID="radDropTelCode" runat="server" Width="50px">
                                 <Items>
@@ -280,11 +283,12 @@
                 </tbody>
             </table>
         </div>
-        <div class="doc_style2 bold">
+<%--                    <% --2022.04.15 comment out below, INC15142408-- %> comment out, end--%>
+<%--        <div class="doc_style2 bold">
             Note : Information to be included in the business card are only business relevant information.
                 <br />
             <span style="padding-left: 35px;">Thus please neither enter private phone numbers nor private e-mail addresses.</span>
-        </div>
+        </div>--%>
         <br />
         <telerik:RadButton ID="radBtnDisplayNameCard" runat="server" Text="Display Name card" OnClientClicked="fn_OnDisplayNameCard" AutoPostBack="false"
             EnableEmbeddedSkins="false" EnableEmbeddedBaseStylesheet="false" ButtonType="LinkButton" CssClass="btn btn-blue btn-size3 bold">
