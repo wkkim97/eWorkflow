@@ -160,6 +160,16 @@ namespace Bayer.eWF.BSL.Approval.Dto
 
         public string IS_DISUSED { get; set; }
 
+        //2022.05.27 add new members for class, for change INC14831972 start add memeber for classs, rebuild Bayer.eWF.BSL.Approval.dll
+        public string BACKGROUND { get; set; }
+        public string PROPOSAL { get; set; }
+        public string PROCESS { get; set; }
+        public string FINANCIAL_IMPACT { get; set; }
+        public string COMMENT { get; set; }
+        public string SPPriceExcp { get; set; }
+        //2022.05.27 add for change INC14831972 end
+
+
         /// <summary>
         /// 
         /// </summary> 
