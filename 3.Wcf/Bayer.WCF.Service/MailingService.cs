@@ -72,7 +72,7 @@ namespace Bayer.WCF.Service
         public static void WriteLog(string sMessage)
         {
             //test 서버는 f 폴더가 없어서 D 로 변경
-            string strLogDir = @"d:\Project\Debug\Log";
+            string strLogDir = @"f:\Project\Debug\Log";//20220615 Bob修改，把d盘改为f盘， 生产环境log目录在F盘
             string strLogWriteYN = "Y";
 
             string strFullPath = string.Format(@"{0}\{1} SendNoticeMailServiceLog.txt", strLogDir, DateTime.Now.ToString("yyyy-MM-dd"));
