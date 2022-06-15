@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!--INC14436682, 2022.01.27 modified by Qiang, 'Telephone number :' from old:#6262, 080-300-6262 to new:#6262, 02-6410-8650-->
 <Mailinfo>
 	<Items>
@@ -17,11 +17,14 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
 
       ]]>
 			</Body>
+      <!--Mail address : itservicedesk@bayer.com <br/>
+      Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>-->
+      <!--20220615 Bob 修改邮件模版 将Mail address这行改为Web portal这一行内容，本文档一共有15处-->
 		</Item>
 		<Item MailSendType="FinalApproval">
 			<Button>Approval</Button>
@@ -37,7 +40,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
@@ -57,7 +60,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
@@ -76,7 +79,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
@@ -96,7 +99,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
@@ -115,7 +118,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
 			</Body>
@@ -138,7 +141,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
 			</Body>
@@ -157,7 +160,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           ]]>
 			</Body>
@@ -177,7 +180,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
@@ -243,7 +246,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
@@ -323,7 +326,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
@@ -393,7 +396,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
@@ -431,7 +434,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
 
         ]]>
@@ -456,7 +459,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
           </body>
           </html>
@@ -478,7 +481,7 @@
               <br/>
               <br/>
               If you have any technical problem, please do not hesitate to contact us <br/>
-              Mail address : itservicedesk@bayer.com <br/>
+              Web portal : <a href="https://bayersi.service-now.com/sp" onclick="window.open(this.href, '', 'width=935px, height=680px, top=10px, left=10px,location=no,titlebar=no,status=no,scrollbars=yes,menubar=no,toolbar=no,directories=no,resizable=no,copyhistory=no'); return false;">IT4You</a> <br/>
               Telephone number : #6262, 02-6410-8650 <br/>
       ]]>
 			</Body>
