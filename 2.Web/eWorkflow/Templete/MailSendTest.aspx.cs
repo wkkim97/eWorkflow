@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+using Bayer.WCF.Service;//20220615 Bob 添加 修改发送邮件测试功能，添加次引用需把Bayer.WCF.Service.dll和Bayer.WCF.Service.pdb文件复制到改项目Bin目录下
+
 public partial class Templete_MailSendTest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
@@ -31,7 +33,15 @@ public partial class Templete_MailSendTest : System.Web.UI.Page
 
         try
         {
-            client.Send(message);
+            #region //20220615 Bob  修改发送邮件测试功能
+            //client.Send(message);//修改前代码
+            #region 修改后代码
+            MailingService mailingService = new MailingService();
+            mailingService.InvokeSendMail("P000050293", "CurrentApprover", "cheng.yin.ext@bayer.com");
+
+            Response.Write(string.Format("Send mail test successful!"));
+            #endregion
+            #endregion
         }
         catch (Exception ex)
         {
