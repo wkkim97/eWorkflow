@@ -19,7 +19,82 @@
                 }
              //   $('#<%= hddAddRow.ClientID %>').val('Y');
             //}
+
+
+            <%--                2022.05.27 add for hide 2 divs for change INC14831972 start--%>
+            $('#divBPPFC').hide();
+            $('#divSPPriceExcp').hide();
+            
+            var v_pipa1 = '';
+            var v_pipa2 = '';
+            //exception is "YES"
+            if ($find('<%= radBtnExceptionYes.ClientID %>').get_checked()) {
+                if ($find('<%= radBtnDiscountNo.ClientID %>').get_checked()) {
+                    $('#divBPPFC').show();
+
+                    $('#divSPPriceExcp').hide();
+                    //$find("<%= RadTextSPPriceExcp.ClientID %>").clear();
+                }
+
+                if ($find('<%= radBtnDiscountYes.ClientID %>').get_checked()) {
+                    $('#divBPPFC').hide();
+<%--                    $find("<%= RadTextBackground.ClientID %>").clear();
+                    $find("<%= RadTextProposal.ClientID %>").clear();
+                    $find("<%= RadTextProcess.ClientID %>").clear(); 
+                    $find("<%= RadTextFinancial.ClientID %>").clear(); 
+                    $find("<%= RadTextExceptionComment.ClientID %>").clear();--%>
+
+                    $('#divSPPriceExcp').show();
+
+                }
+<%--                v_pipa1 = $find('<%= radBtnDiscountNo.ClientID %>').get_value();
+                v_pipa2 = $find('<%= radBtnDiscountYes.ClientID %>').get_value();--%>
+            } else if ($find('<%= radBtnExceptionNo.ClientID %>').get_checked()) {
+<%--                $find("<%= RadTextSPPriceExcp.ClientID %>").clear();
+
+                $find("<%= RadTextBackground.ClientID %>").clear();
+                $find("<%= RadTextProposal.ClientID %>").clear();
+                $find("<%= RadTextProcess.ClientID %>").clear(); 
+                $find("<%= RadTextFinancial.ClientID %>").clear(); 
+                $find("<%= RadTextExceptionComment.ClientID %>").clear();--%>
+
+
+            }
+
+            //alert(v_pipa1)
+            //alert(v_pipa2)
+
+            //console.log(v_pipa1);
+            //console.log(v_pipa2);
+            //if (v_pipa1 == '') {
+            //    $('#divBPPFC').show();
+            //    $('#divSPPriceExcp').hide();
+            //}
+            //if (v_pipa2 == '') {
+            //    $('#divBPPFC').hide();
+            //    $('#divSPPriceExcp').show();
+            //}
+            <%--                2022.05.27 add for change INC14831972 end--%>
+
         }
+        <%--                2022.05.27 add for change INC14831972 start--%>
+        function fn_selectType() {
+            if ($find('<%= radBtnExceptionYes.ClientID %>').get_checked()) {
+                if ($find('<%= radBtnDiscountNo.ClientID %>').get_checked()) {
+                    $('#divBPPFC').show();
+                    $('#divSPPriceExcp').hide();
+                }
+
+                if ($find('<%= radBtnDiscountYes.ClientID %>').get_checked()) {
+                    $('#divBPPFC').hide();
+                    $('#divSPPriceExcp').show();
+                }
+            }
+        }
+
+        <%--                2022.05.27 add for change INC14831972 end--%>
+
+
         function fn_Radio(sender, args) {
             sender.set_autoPostBack(false);
 
@@ -606,18 +681,83 @@
                 <tr>
                     <th>Same Discount</th>
                     <td>
+<%--                                2022.05.27 add "fn_selectType" in below lines--%>
                         <div id="divSameDiscountGroup" runat="server" >
                             <telerik:RadButton ID="radBtnDiscountYes" runat="server" Text="YES" Value="YES" GroupName="DiscountGroup"
-                                    ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" >
+                                    ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" OnClientClicked ="fn_selectType">
                             </telerik:RadButton>
                             <telerik:RadButton ID="radBtnDiscountNo" runat="server" Text="NO" Value="NO" GroupName="DiscountGroup"
-                                ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" >
+                                ButtonType="ToggleButton" ToggleType="Radio" OnClick="radBtnSameDiscountGroup_Click" OnClientClicked ="fn_selectType">
                             </telerik:RadButton>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
+<%--                2022.05.27 add Divs for change INC14831972 start--%>
+        <div class="data_type1" id="divSPPriceExcp" style="display:none">
+            <table>
+                <colgroup>
+                    <col style="width: 27%;" />
+                    <col />
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>Speical Price or Exception Doc No. <span class="text_red">*</span></th>
+                        <td >
+                            <telerik:RadTextBox runat="server" ID="RadTextSPPriceExcp" Width="90%"></telerik:RadTextBox>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+            <div id="divBPPFC" class="data_type1" style="display:none"  >
+            <table>
+                <colgroup>
+                    <col style="width: 27%" />
+                    <col />
+                </colgroup>
+                <tbody>
+
+                <tr>
+                    <th>Backgroud <span class="text_red">*</span></th>
+                    <td>
+                        <telerik:RadTextBox ID="RadTextBackground" runat="server" Width="100%" TextMode="MultiLine" Height="100px"></telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Proposal <span class="text_red">*</span></th>
+                    <td>
+                        <telerik:RadTextBox ID="RadTextProposal" runat="server" Width="100%" TextMode="MultiLine" Height="100px"></telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Process <span class="text_red">*</span></th>
+                    <td>
+                        <telerik:RadTextBox ID="RadTextProcess" runat="server" Width="100%" TextMode="MultiLine" Height="100px"></telerik:RadTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Financial impact <span class="text_red">*</span></th>
+                    <td>
+                        <telerik:RadTextBox ID="RadTextFinancial" runat="server" Width="100%" TextMode="MultiLine" Height="100px"></telerik:RadTextBox>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Comment <span class="text_red">*</span></th>
+                    <td>
+                        <telerik:RadTextBox ID="RadTextExceptionComment" runat="server" Width="100%" TextMode="MultiLine" Height="100px"></telerik:RadTextBox>
+                    </td>
+                </tr>
+              </tbody>              
+            </table>
+
+        </div>
+<%--                2022.03.21 add for change INC14831972 end--%>
+
+
         <h3>Wholesaler and Hospital Information</h3>
         <div class="data_type1">
             <table>

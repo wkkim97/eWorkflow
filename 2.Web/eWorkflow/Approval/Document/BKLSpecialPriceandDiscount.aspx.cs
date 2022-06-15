@@ -172,7 +172,35 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
                     else if (doc.Item1.TYPE.Equals(this.radBtnWORP.Value)) this.radBtnWORP.Checked = true;
                     else if (doc.Item1.TYPE.Equals(this.radBtnCustomer.Value)) this.radBtnCustomer.Checked = true;
                 }
-                
+
+
+                //<% --2022.05.27 add for change INC14831972 start-- %>
+                //ApprovalContext.USP_SELECT_BKL_SPECIAL_PRICE_AND_DISCOUNT, 页面load从SP取数据
+                if (this.radBtnExceptionYes.Value == "YES") 
+                {
+                    //if  (this.radBtnDiscountNo.Value == "YES")
+                    //{
+                        this.RadTextBackground.Text = doc.Item1.BACKGROUND;
+                        this.RadTextProposal.Text = doc.Item1.PROPOSAL;
+                        this.RadTextProcess.Text = doc.Item1.PROCESS;
+                        this.RadTextFinancial.Text = doc.Item1.FINANCIAL_IMPACT;
+                        this.RadTextExceptionComment.Text = doc.Item1.COMMENT;
+                    //}
+
+                    //if (this.radBtnDiscountYes.Value == "YES") 
+                    //{
+                        this.RadTextSPPriceExcp.Text = doc.Item1.SPPriceExcp;
+                    //}
+                }
+
+                //<%--                2022.05.27 add for change INC14831972 start， issue code，no need to recover--%>
+                ////this.RadTextBackground.Text = doc.Item1.BACKGROUND;
+                ////this.RadTextProposal.Text = doc.Item1.PROPOSAL;
+                ////this.RadTextProcess.Text = doc.Item1.PROCESS;
+                ////this.RadTextFinancial.Text = doc.Item1.FINANCIAL_IMPACT;
+                ////this.RadTextExceptionComment.Text = doc.Item1.COMMENT;
+                //<%--                2022.05.27 add for change INC14831972 end--%>
+
 
                 // 2nd Wholesaler
                 this.radTxtSecondWholesaler.Text = doc.Item1.SECOND_WHOLESALER;
@@ -449,6 +477,8 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
 
     }
 
+
+    //2022.03.22 add comment only for radBtnSameDiscountGroup_Click
     //radBtnSameDiscountGroup_Click
     protected void radBtnSameDiscountGroup_Click(object sender, EventArgs e)
     {
@@ -674,6 +704,53 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         //        message += "Product Family";
         //}
 
+
+        //<%--                2022.05.27 add for validation, test OK, change INC14831972, add for Validation-- start%>
+
+        //业务场景问题：
+        //1.'Same Discount' 的yes，no 是or的关系？ Yes
+        //2.'Same Discount' 的yes，no的时候，追加的部分都是必填项目，用户多次选择修改之后，再提交，是否是二择一？提交之后验证。
+        //3.'Same Discount' 的yes，no在提交之后，是否可以在页面修改这个提交的内容，如果可以i修改，是否是覆盖上次的选择和填的内容？只保留最新提交的记录
+        //4. 用户界面是否有可以删除这个文档的地方，此文档页面或者其他的页面，如有，需要调查相关的代码存储过程，和测试相关的场景？草稿是否可以删除，
+        //提交, draft, edit, pending approval
+
+        //'Same Discount' = YES
+        if (radBtnDiscountYes.Checked) {
+            if (RadTextSPPriceExcp.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Speical Price or Exception Doc No.";
+            }
+        }
+
+        //'Same Discount' = No
+        if (radBtnDiscountNo.Checked)
+        {
+            if (RadTextBackground.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Background";
+            }
+            if (RadTextProposal.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Proposal";
+            }
+            if (RadTextProcess.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Process";
+            }
+            if (RadTextFinancial.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Financial impact";
+            }
+            if (RadTextExceptionComment.Text.Length <= 0)
+            {
+                message += (message.IsNullOrEmptyEx() ? "" : ",") + "Comment ";
+            }
+
+        }
+
+        //<%--                2022.05.27 add for change INC14831972, add for Validation-- end%>
+
+
         if (status == ApprovalUtil.ApprovalStatus.Request)
         {
             //if (salesGroup == "AH" && GetTypeValueAH().IsNullOrEmptyEx())
@@ -765,6 +842,35 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         doc.TYPE = GetTypeValue();
         doc.EXCEPTION = GetExceptionValue();
         doc.SAMEDISCOUNT = GetSameDiscountValue();
+
+        //<% --2022.05.27 add 使用填写的内容，来提交表單，for change INC14831972 start-- %>
+        if (radBtnDiscountYes.Checked)
+        {
+            doc.SPPriceExcp = this.RadTextSPPriceExcp.Text;
+
+            doc.BACKGROUND = string.Empty;
+            doc.PROPOSAL = string.Empty;
+            doc.PROCESS = string.Empty;
+            doc.FINANCIAL_IMPACT = string.Empty;
+            doc.COMMENT = string.Empty;
+
+        }
+
+
+        if (radBtnDiscountNo.Checked)
+        {
+            doc.SPPriceExcp = string.Empty;
+
+            doc.BACKGROUND = this.RadTextBackground.Text;
+            doc.PROPOSAL = this.RadTextProposal.Text;
+            doc.PROCESS = this.RadTextProcess.Text;
+            doc.FINANCIAL_IMPACT = this.RadTextFinancial.Text;
+            doc.COMMENT = this.RadTextExceptionComment.Text;
+        }
+
+        //<% --2022.05.27 add for change INC14831972 end-- %>
+
+
         //if (selectedbu == "AH")
         //{
         //    doc.TYPE = GetTypeValueAH();
@@ -777,7 +883,7 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
         //if (selectedbu == "HH")
         //    doc.PRODUCT_FAMILY = GetProductFamily();
         //else
-            doc.PRODUCT_FAMILY = string.Empty;
+        doc.PRODUCT_FAMILY = string.Empty;
 
 
 
@@ -886,7 +992,7 @@ public partial class Approval_Document_BKLSpecialPriceandDiscount : DNSoft.eWF.F
 
 
 
-
+        //<%--                2022.05.30 add for change INC14831972 TBD SPSPSP, need modify the SP --%>
         using (BKLSpecialPriceandDiscountMgr mgr = new BKLSpecialPriceandDiscountMgr())
         {
             return mgr.MergeBKLPriceAndMargin(doc, customers, hospitals, products);
